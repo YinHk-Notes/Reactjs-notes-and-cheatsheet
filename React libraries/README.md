@@ -5,6 +5,7 @@
 * material-ui : https://material-ui.com/ 
 * formik : https://formik.org/
 * moment : https://momentjs.com/
+* react-router : https://reactrouter.com/web/guides/quick-start
 
 
 **35+ Free React templates and themes** \
