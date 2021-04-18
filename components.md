@@ -1,9 +1,7 @@
 **Functional Components vs Class-based Components** \
 **https://cythilya.github.io/2018/04/09/react-functional-components-vs-class-based-components/#functional-components**
 
-React 的元件可用以下方式分類
-
-
+**React 的元件可用以下方式分類**
 
 *   Functional Components vs Class-based Components 或
 *   Stateless Components vs Stateful Components
@@ -29,22 +27,16 @@ Functional Components 的撰寫方式是從父層傳遞的 props 得到資料，
 
 這個元件 VideoListItem 從父層得到 video，接著輸出一段 HTML，內含剛剛從 video 內得到的標題和圖檔位置。
 
+```js
 const VideoListItem = ({ video }) => {
-
   return (
-
-    &lt;li>
-
-      &lt;h3>{video.title}&lt;/h3>
-
-      &lt;img src={video.imageUrl} />
-
-    &lt;/li>
-
+    <li>
+      <h3>{video.title}</h3>
+      <img src={video.imageUrl} />
+    </li>
   );
-
 };
-
+```
 
 ## **Class-based Components**
 
@@ -72,50 +64,33 @@ const VideoListItem = ({ video }) => {
 *   (6) 有設定 value 才會更新元件，也就是 &lt;input> 的 value，否則只是觸發事件而已；而由於觸發事件導致更新 state，所以 value 才會被更新。
 *   (7) 只要更新 state，就會導致元件觸發 render method 而自動更新元件。
 
+```js
 class SearchBar extends Component {
-
   // ----- (1)
-
   constructor(props) {
-
     super(props); // ----- (2)
 
     this.state = { term: '' }; // ----- (3)
-
     this.onInputChange = this.onInputChange.bind(this); // ----- (4)
-
   }
 
   render() {
-
     return (
-
       // ----- (5)
-
-      &lt;div>
-
-        &lt;input
-
+      <div>
+        <input
           value={this.state.term} // ----- (6)
-
           onChange={this.onInputChange}
-
         />
-
-      &lt;/div>
-
+      </div>
     );
-
   }
 
   onInputChange(event) {
-
     this.setState({ term: event.target.value }); // ----- (7)
-
   }
-
 }
-
+```
 
 ## **Pure Components**
 
