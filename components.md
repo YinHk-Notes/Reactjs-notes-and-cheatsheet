@@ -214,11 +214,40 @@ The downside is that you can't have lifecycle hooks. The lifecycle method Should
 
 
 
+## Container Components vs. Presentational Components
+
+**Presentational Components**\
+Presentational components are coupled with the view or how things look. These components accept props from their container counterpart and render them. Everything that has to do with describing the UI should go here. 
+
+Presentational components are reusable and should stay decoupled from the behavioral layer. A presentational component receives the data and callbacks exclusively via props and when an event occurs, like a button being pressed, it performs a callback to the container component via props to invoke an event handling method. 
+
+Functional components should be your first choice for writing presentational components unless a state is required. If a presentational component requires a state, it should be concerned with the UI state and not actual data. The presentational component doesn't interact with the Redux store or make API calls. 
+
+**Container Components**\
+Container components will deal with the behavioral part. A container component tells the presentational component what should be rendered using props. It shouldn't contain limited DOM markups and styles. If you're using Redux, a container component contains the code that dispatches an action to a store. Alternatively, this is the place where you should place your API calls and store the result into the component's state. 
+
+The usual structure is that there is a container component at the top that passes down the data to its child presentational components as props. This works for smaller projects; however, when the project gets bigger and you have a lot of intermediate components that just accept props and pass them on to child components, this will get nasty and hard to maintain. When this happens, it's better to create a container component unique to the leaf component, and this will ease the burden on the intermediate components.
 
 
+## Pure component
+A component is said to be pure if it is guaranteed to return the same result given the same props and state. A functional component is a good example of a pure component because, given an input, you know what will be rendered. 
 
+```js
+const HelloWorld = ({name}) => (
+ <div>{`Hi ${name}`}</div>
+);
+```
 
+Class components can be pure too as long as their props and state are immutable. If you have a component with a 'deep' immutable set of props and state, React API has something called PureComponent. React.PureComponent is similar to React.Component, but it implements the ShouldComponentUpdate() method a bit differently. ShouldComponentUpdate() is invoked before something is rerendered. The default behaviour is that it returns true so that any change to the state or the props rerenders the component.
 
+```js
+shouldComponentUpdate(nextProps, nextState) {
+  return true;
+}
+```
 
+However, with PureComponent, it performs a shallow comparison of objects. Shallow comparison means that you compare the immediate contents of the objects instead of recursively comparing all the key/value pairs of the object. So only the object references are compared, and if the state/props are mutated, this might not work as intended. 
+
+React.PureComponent is used for optimizing performance, and there is no reason why you should consider using it unless you encounter some sort of performance issue. 
 
 
