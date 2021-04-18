@@ -111,7 +111,7 @@ class SearchBar extends Component {
 
 [go to top](#top)
 
-**Stateful Components** <a name="stateful"></a>
+**Stateful Components** <a name="stateful"></a> \
 Stateful components are always class components. As previously mentioned, stateful components have a state that gets initialized in the constructor. 
 
 ```jss
