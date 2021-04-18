@@ -49,6 +49,7 @@ const VideoListItem = ({ video }) => {
 
 ## **Class-based Components**
 
+[go to top](#top)
 
 ### **特點**<a name="cc"></a>
 
@@ -101,18 +102,15 @@ class SearchBar extends Component {
 }
 ```
 
-## **Pure Components** <a name="pc"></a>
 
-只要可以保證相同的輸入會得到相同的輸出，那麼就可以稱這個元件是 Pure Components。因此，Functional Components 是 Pure Components；而只要 props 和 state 是 Immutable，Class-based Components 也可以是 Pure Components。
-
-React.PureComponent 的 ShouldComponentUpdate() 和 React.Component 的 ShouldComponentUpdate() 不同之處在於，React.PureComponent 的 ShouldComponentUpdate() 只做[淺比較（Shallow Compare）](https://stackoverflow.com/questions/36084515/how-does-shallow-compare-work-in-react)，也就是只比較位置而不比較內容值，因此一但儲存的位置相同但內容不同，就無法正常運作。淺比較的運作基礎是假設資料是 Immutable，也就是說，只要資料更新就存到另一個記憶體位置，因此只要比對記憶體位置就等於比較值是否相等。
 
 
 
 ## Stateful Components vs. Stateless Components
 **https://code.tutsplus.com/tutorials/stateful-vs-stateless-functional-components-in-react--cms-29541**
 
-**Stateful Components** \
+[go to top](#top)
+**Stateful Components** \ <a name="stateful"></a>
 Stateful components are always class components. As previously mentioned, stateful components have a state that gets initialized in the constructor. 
 
 ```jss
@@ -216,7 +214,8 @@ handleCount(value) {
 ```
 The setState() rerenders the component, and you have a working stateful component.
 
-**Stateless Components** \
+[go to top](#top)
+**Stateless Components** \ <a name="stateless"></a>
 You can use either a function or a class for creating stateless components. But unless you need to use a lifecycle hook in your components, you should go for stateless functional components. There are a lot of benefits if you decide to use stateless functional components here; they are easy to write, understand, and test, and you can avoid the this keyword altogether. However, as of React v16, there are no performance benefits from using stateless functional components over class components. 
 
 The downside is that you can't have lifecycle hooks. The lifecycle method ShouldComponentUpdate() is often used to optimize performance and to manually control what gets rerendered. You can't use that with functional components yet. Refs are also not supported.
@@ -226,7 +225,9 @@ The downside is that you can't have lifecycle hooks. The lifecycle method Should
 ## Container Components vs. Presentational Components
 **https://cythilya.github.io/2018/04/14/container-components-vs-presentational-components/**
 
-**Presentational Components**\
+[go to top](#top)
+
+**Presentational Components**\  <a name="presentational"></a>
 Presentational components are coupled with the view or how things look. These components accept props from their container counterpart and render them. Everything that has to do with describing the UI should go here. 
 
 Presentational components are reusable and should stay decoupled from the behavioral layer. A presentational component receives the data and callbacks exclusively via props and when an event occurs, like a button being pressed, it performs a callback to the container component via props to invoke an event handling method. 
@@ -253,8 +254,9 @@ const ArticleDetail = ({ post }) => {
 };
 ```
 
+[go to top](#top)
 
-**Container Components**\
+**Container Components**\ <a name="container"></a>
 Container components will deal with the behavioral part. A container component tells the presentational component what should be rendered using props. It shouldn't contain limited DOM markups and styles. If you're using Redux, a container component contains the code that dispatches an action to a store. Alternatively, this is the place where you should place your API calls and store the result into the component's state. 
 
 The usual structure is that there is a container component at the top that passes down the data to its child presentational components as props. This works for smaller projects; however, when the project gets bigger and you have a lot of intermediate components that just accept props and pass them on to child components, this will get nasty and hard to maintain. When this happens, it's better to create a container component unique to the leaf component, and this will ease the burden on the intermediate components.
@@ -313,8 +315,14 @@ class Article extends Component {
 ```
 
 
+[go to top](#top)
 
-## Pure component
+## **Pure Components** <a name="pc"></a>
+
+只要可以保證相同的輸入會得到相同的輸出，那麼就可以稱這個元件是 Pure Components。因此，Functional Components 是 Pure Components；而只要 props 和 state 是 Immutable，Class-based Components 也可以是 Pure Components。
+
+React.PureComponent 的 ShouldComponentUpdate() 和 React.Component 的 ShouldComponentUpdate() 不同之處在於，React.PureComponent 的 ShouldComponentUpdate() 只做[淺比較（Shallow Compare）](https://stackoverflow.com/questions/36084515/how-does-shallow-compare-work-in-react)，也就是只比較位置而不比較內容值，因此一但儲存的位置相同但內容不同，就無法正常運作。淺比較的運作基礎是假設資料是 Immutable，也就是說，只要資料更新就存到另一個記憶體位置，因此只要比對記憶體位置就等於比較值是否相等。
+
 A component is said to be pure if it is guaranteed to return the same result given the same props and state. A functional component is a good example of a pure component because, given an input, you know what will be rendered. 
 
 ```js
