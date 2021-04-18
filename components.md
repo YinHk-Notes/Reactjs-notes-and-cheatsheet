@@ -6,13 +6,22 @@
 *   Functional Components vs Class-based Components 或
 *   Stateless Components vs Stateful Components
 
+**content:**
+* [funtional component](#fc)
+* [class component](#cc)
+* [pure component](#pc)
+* [stateful component](#stateful)
+* [stateless component](#stateless)
+* [container Components](#container)
+* [presentational Components](#presentational)
+
 
 ## **Functional Components**
 
 Functional Components 的撰寫方式是從父層傳遞的 props 得到資料，然後將結果 JSX 輸出至 DOM。
 
 
-### **特點**
+### **特點** <a name="fc"></a>
 
 
 
@@ -41,7 +50,7 @@ const VideoListItem = ({ video }) => {
 ## **Class-based Components**
 
 
-### **特點**
+### **特點**<a name="cc"></a>
 
 
 
@@ -92,7 +101,7 @@ class SearchBar extends Component {
 }
 ```
 
-## **Pure Components**
+## **Pure Components** <a name="pc"></a>
 
 只要可以保證相同的輸入會得到相同的輸出，那麼就可以稱這個元件是 Pure Components。因此，Functional Components 是 Pure Components；而只要 props 和 state 是 Immutable，Class-based Components 也可以是 Pure Components。
 
