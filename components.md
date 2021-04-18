@@ -215,6 +215,7 @@ The downside is that you can't have lifecycle hooks. The lifecycle method Should
 
 
 ## Container Components vs. Presentational Components
+**https://cythilya.github.io/2018/04/14/container-components-vs-presentational-components/**
 
 **Presentational Components**\
 Presentational components are coupled with the view or how things look. These components accept props from their container counterpart and render them. Everything that has to do with describing the UI should go here. 
@@ -223,10 +224,85 @@ Presentational components are reusable and should stay decoupled from the behavi
 
 Functional components should be your first choice for writing presentational components unless a state is required. If a presentational component requires a state, it should be concerned with the UI state and not actual data. The presentational component doesn't interact with the Redux store or make API calls. 
 
+presentational components:
+* 又稱 Dumb Components。
+* 著重在畫面的呈現。例如：DOM Markup、CSS Style。
+* 從 props 取得所需資料和 Callback，與 Action 和 Store 等資料互動無關。
+* 沒有內部狀態，通常是 Functional / Pure / Stateless Components。
+
+**範例** \
+這個元件 **ArticleDetail** 從父層 **props** 得到 post，接著輸出一段 HTML，內含剛剛從 post 內得到的標題、分類和內容。
+```js
+const ArticleDetail = ({ post }) => {
+  return (
+    <div>
+      <h3>{post.title}</h3>
+      <h6>Categories: {post.categories}</h6>
+      <p>{post.content}</p>
+    </div>
+  );
+};
+```
+
+
 **Container Components**\
 Container components will deal with the behavioral part. A container component tells the presentational component what should be rendered using props. It shouldn't contain limited DOM markups and styles. If you're using Redux, a container component contains the code that dispatches an action to a store. Alternatively, this is the place where you should place your API calls and store the result into the component's state. 
 
 The usual structure is that there is a container component at the top that passes down the data to its child presentational components as props. This works for smaller projects; however, when the project gets bigger and you have a lot of intermediate components that just accept props and pass them on to child components, this will get nasty and hard to maintain. When this happens, it's better to create a container component unique to the leaf component, and this will ease the burden on the intermediate components.
+
+Container Components: 
+* 又稱 Smart Components。
+* 著重在怎麼完成工作。例如：資料的取得和儲存、包裝其子元件。
+* 擁有內部狀態（State），以提供自身或其他元件所需的資料。
+* 存取資料
+  1) 從 Store 取得資料後，使用 props 提供自身或其子元件所需資料。
+  2) 發送 Action 和提供 Callback 來與 Store 溝通，Action 會將 API 的結果回傳至 Container 更新元件自身狀態或送到 Reducer 更新 Store。
+* 擁有 Lifecycle Hooks。
+* 與 React-Redux 綁定來產生這個 Container 以管理整個 App 的狀態。
+
+
+**範例** \
+這個元件 **Article** 是用來檢視一篇文章，並可刪除這篇文章。
+
+
+```js
+class Article extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = { status: 'active' }; // 擁有內部狀態
+  }
+
+  componentDidMount() {
+    // 擁有 Lifecycle Hooks
+    const { id } = this.props.match.params;
+    this.props.fetchPost(id); // 發送 Action
+  }
+
+  onDeleteClick() {
+    const { id } = this.props.match.params;
+
+    this.setState({ status: 'deleting' });
+
+    this.props.deletePost(id, () => {
+      // 發送 Action
+      this.props.history.push('/'); // 提供 Callback
+      this.setState({ status: 'deleted' });
+    });
+  }
+
+  // 提供資料、包裝子元件
+  render() {
+    return (
+      <div>
+        <button onClick={this.onDeleteClick.bind(this)}>Delete Post</button>
+        <ArticleDetail post={this.props.post} />
+      </div>
+    );
+  }
+}
+```
+
 
 
 ## Pure component
