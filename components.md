@@ -98,3 +98,127 @@ class SearchBar extends Component {
 
 React.PureComponent 的 ShouldComponentUpdate() 和 React.Component 的 ShouldComponentUpdate() 不同之處在於，React.PureComponent 的 ShouldComponentUpdate() 只做[淺比較（Shallow Compare）](https://stackoverflow.com/questions/36084515/how-does-shallow-compare-work-in-react)，也就是只比較位置而不比較內容值，因此一但儲存的位置相同但內容不同，就無法正常運作。淺比較的運作基礎是假設資料是 Immutable，也就是說，只要資料更新就存到另一個記憶體位置，因此只要比對記憶體位置就等於比較值是否相等。
 
+
+
+## Stateful Components vs. Stateless Components
+**https://code.tutsplus.com/tutorials/stateful-vs-stateless-functional-components-in-react--cms-29541**
+
+**Stateful Components** \
+Stateful components are always class components. As previously mentioned, stateful components have a state that gets initialized in the constructor. 
+
+```jss
+// Here is an excerpt from the counter example
+constructor(props) {
+  super(props);
+  this.state = { count: 0 };
+}
+```
+
+We've created a state object and initialized it with a count of 0. There is an alternative syntax proposed to make this easier called class fields. It's not a part of the ECMAScript specification yet, but If you're using a Babel transpiler, this syntax should work out of the box.
+
+```jss
+class App extends Component {
+   
+  /*
+  // Not required anymore
+  constructor() {
+      super();
+      this.state = {
+        count: 1
+      }
+  }
+  */
+   
+  state = { count: 1 };
+   
+  handleCount(value) {
+      this.setState((prevState) => ({count: prevState.count+value}));
+  }
+ 
+  render() {
+    // omitted for brevity
+  }
+   
+}
+```
+
+You can avoid using the constructor altogether with this new syntax. \
+We can now access the state within the class methods including render(). If you're going to use them inside render() to display the value of the current count, you need to place it inside curly brackets as follows:
+
+```hjss
+render() {
+return (
+    Current count: {this.state.count}
+    )
+}
+```
+
+The this keyword here refers to the instance of the current component. 
+
+Initializing the state is not enough—we need to be able to update the state in order to create an interactive application. If you thought this would work, no, it won't.
+
+```jss
+//Wrong way
+ 
+handleCount(value) {
+    this.state.count = this.state.count +value;
+}
+```
+
+React components are equipped with a method called setState for updating the state. setState accepts an object that contains the new state of the count.
+```jss
+// This works
+ 
+handleCount(value) {
+    this.setState({count: this.state.count+ value});
+}
+```
+
+The setState() accepts an object as an input, and we increment the previous value of count by 1, which works as expected. However, there is a catch. When there are multiple setState calls that read a previous value of the state and write a new value into it, we might end up with a race condition. What that means is that the final results won't match up with the expected values.
+
+Here is an example that should make it clear for you. Try this in the codesandbox snippet above.
+
+```jss
+// What is the expected output? Try it in the code sandbox.
+handleCount(value) {
+    this.setState({count: this.state.count+100});
+    this.setState({count: this.state.count+value});
+    this.setState({count: this.state.count-100});
+}
+```
+
+We want the setState to increment the count by 100, then update it by 1, and then remove that 100 that was added earlier. If setState performs the state transition in the actual order, we will get the expected behavior. However, setState is asynchronous, and multiple setState calls might be batched together for better UI experience and performance. So the above code yields a behavior which is different from what we expect.
+
+Therefore, instead of directly passing an object, you can pass in an updater function that has the signature:
+```jss
+(prevState, props) => stateChange
+```
+
+prevState is a reference to the previous state and is guaranteed to be up to date. props refers to the component's props, and we don't need props to update the state here, so we can ignore that. Hence, we can use it for updating state and avoid the race condition.
+```jss
+// The right way
+ 
+handleCount(value) {
+     
+  this.setState((prevState) => {
+    count: prevState.count +1
+  });
+}
+```
+The setState() rerenders the component, and you have a working stateful component.
+
+**Stateless Components**
+You can use either a function or a class for creating stateless components. But unless you need to use a lifecycle hook in your components, you should go for stateless functional components. There are a lot of benefits if you decide to use stateless functional components here; they are easy to write, understand, and test, and you can avoid the this keyword altogether. However, as of React v16, there are no performance benefits from using stateless functional components over class components. 
+
+The downside is that you can't have lifecycle hooks. The lifecycle method ShouldComponentUpdate() is often used to optimize performance and to manually control what gets rerendered. You can't use that with functional components yet. Refs are also not supported.
+
+
+
+
+
+
+
+
+
+
+
