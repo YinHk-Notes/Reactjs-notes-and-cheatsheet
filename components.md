@@ -110,7 +110,8 @@ class SearchBar extends Component {
 **https://code.tutsplus.com/tutorials/stateful-vs-stateless-functional-components-in-react--cms-29541**
 
 [go to top](#top)
-**Stateful Components** \ <a name="stateful"></a>
+
+**Stateful Components** <a name="stateful"></a>
 Stateful components are always class components. As previously mentioned, stateful components have a state that gets initialized in the constructor. 
 
 ```jss
