@@ -8,5 +8,5 @@
 
 
 **35+ Free React templates and themes** \
-https://dev.to/davidepacilio/35-free-react-templates-and-themes-32ci
+**https://dev.to/davidepacilio/35-free-react-templates-and-themes-32ci**
 
