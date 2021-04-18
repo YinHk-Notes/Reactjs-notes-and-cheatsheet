@@ -1,7 +1,7 @@
-**Functional Components vs Class-based Components** \
+**Functional Components vs Class-based Components** \ 
 **https://cythilya.github.io/2018/04/09/react-functional-components-vs-class-based-components/#functional-components**
 
-**React 的元件可用以下方式分類**
+**React 的元件可用以下方式分類** <a name="top"></a>
 
 *   Functional Components vs Class-based Components 或
 *   Stateless Components vs Stateful Components
