@@ -11,6 +11,8 @@ This is code, notes, and snippets about React
 </p>
 <p>
 
+https://www.notion.so/React-Component-0701b8849cc64335b7a3bc4c0884819f
+
 <strong>#React js:</strong>
 </p>
 <p>
