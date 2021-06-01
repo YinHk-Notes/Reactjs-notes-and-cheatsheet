@@ -6,6 +6,7 @@
 * formik : https://formik.org/
 * moment : https://momentjs.com/
 * react-router : https://reactrouter.com/web/guides/quick-start
+* react-semantic-ui : https://react.semantic-ui.com/
 
 
 **35+ Free React templates and themes** \
