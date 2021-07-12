@@ -7,6 +7,7 @@
 * moment : https://momentjs.com/
 * react-router : https://reactrouter.com/web/guides/quick-start
 * react-semantic-ui : https://react.semantic-ui.com/
+* react-select : https://react-select.com/home
 
 
 **35+ Free React templates and themes** \
