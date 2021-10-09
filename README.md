@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://github.com/YinHk-Notes/React-App/blob/main/React.png" height="200px" />
+<img src="img/React-logo.png" height="200px" />
 </p>
   
 # React-App
