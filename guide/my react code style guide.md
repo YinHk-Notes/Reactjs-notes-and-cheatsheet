@@ -52,6 +52,18 @@ export default withStyles(styles)(HigherOrderComponent);
 
 [Typechecking With PropTypes - React](https://zh-hant.reactjs.org/docs/typechecking-with-proptypes.html)
 
+```jsx
+import * as React from 'react';
+import { makeStyles } from '@material-ui/core';
+import styles from './style';
+
+const componentName = props => {
+	const classes = useStyles();
+  ...
+}
+export default componentName;
+```
+
 **class component example:**
 
 ```jsx
