@@ -23,6 +23,30 @@ React.createElement(
 )
 ```
 
+#### using JSX vs without JSX in react
+written with JSX:
+```jsx
+class Hello extends React.Component {
+  render() {
+    return <div>Hello {this.props.toWhat}</div>;
+  }
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Hello toWhat="World" />);
+```
+without using JSX:
+```js
+class Hello extends React.Component {
+  render() {
+    return React.createElement('div', null, `Hello ${this.props.toWhat}`);
+  }
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(React.createElement(Hello, {toWhat: 'World'}, null));
+```
+
 
 #### use comment in JSX
 ```jsx
