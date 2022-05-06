@@ -20,13 +20,55 @@
 const higherOrderComponent = (WrappedComponent) => {
   class EnhancedComponent extends React.Component {
     render() {
-      // 記得要用 ...this.props 把所有原本的 props 內容帶回到 Wrapper Component 中
+      // 記得要用 ...this.props 把所有原本的 props 內容帶回到 Wrapped Component 中
       return <WrappedComponent {...this.props} />;
     }
     
   return EnhancedComponent;
 }
+    
+export default higherOrderComponent;
   
-  
+    
+//eg: 
+/* This is a HOC */
+
+import React from 'react';
+import { connect } from 'react-redux';
+
+export default (ChildComponent) => {
+  class ComposedComponent extends React.Component {
+    // Our component just got rendered
+    componentDidMount() {
+      this.verifyAuth();
+    }
+
+    // Our component just got updated
+    componentDidUpdate() {
+      this.verifyAuth();
+    }
+
+    verifyAuth() {
+      if (this.props.auth) {
+        return;
+      }
+      this.props.history.push('/');
+    }
+
+    render() {
+      // 記得要用 ...this.props 把所有原本的 props 內容帶回到 ChildComponent 中
+      return <ChildComponent {...this.props} />;
+    }
+  }
+
+  const mapStateToProps = (state) => ({
+    auth: state.auth,
+  });
+
+  return connect(mapStateToProps)(ComposedComponent);
+};
+    
+    
+
   
   
