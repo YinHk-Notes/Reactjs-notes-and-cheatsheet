@@ -31,42 +31,100 @@ const higherOrderComponent = (WrappedComponent) => {
 export default higherOrderComponent;
   
     
-//eg: 
+//eg1: 
 /* This is a HOC */
 
-import React from 'react';
-import { connect } from 'react-redux';
+// 簡易的 HOC
+const HOC = (WrappedComponent) => {
+    return class simpleHOC extends Component {
+        constructor() {
+            super();
+            this.state = {say: 'good morning'}
+        }
 
-export default (ChildComponent) => {
-  class ComposedComponent extends React.Component {
-    // Our component just got rendered
-    componentDidMount() {
-      this.verifyAuth();
+        render() {
+            return <WrappedComponent {...this.props} say={this.state.say}/>
+        }
     }
-
-    // Our component just got updated
-    componentDidUpdate() {
-      this.verifyAuth();
-    }
-
-    verifyAuth() {
-      if (this.props.auth) {
-        return;
-      }
-      this.props.history.push('/');
-    }
-
-    render() {
-      // 記得要用 ...this.props 把所有原本的 props 內容帶回到 ChildComponent 中
-      return <ChildComponent {...this.props} />;
-    }
-  }
-
-  const mapStateToProps = (state) => ({
-    auth: state.auth,
-  });
-
-  return connect(mapStateToProps)(ComposedComponent);
 };
-    
-    
+// 要傳入的元件
+class SimpleComp extends Component {
+    render() {
+        const {say} = this.props;
+        return (<div>Johnny {say}</div>); // Johnny good morning
+    }
+}
+// 使用掛入完的元件
+const Simple =  HOC(SimpleComp);
+
+
+//傳參數的 HOC:
+// 可傳入性別參數的 HOC
+const UserGenderHOC = (gender) => (WrappedComponent) => {
+    return class userGenderHOC extends Component {
+        render() {
+            return (
+                <WrappedComponent gender={gender} {...this.props} />
+            );
+        }
+    }
+};
+// 要傳入的元件
+class BaseComp extends Component {
+    render() {
+        const {gender} = this.props;
+        return (<div>Gender: {gender}</div>); // Gender: Male
+    }
+}
+// 傳入參數並使用元件
+const Male =  UserGenderHOC('Male')(BaseComp);
+
+
+//multi HOC
+// 可傳入性別參數的 HOC
+const UserGenderHOC = (gender) => (WrappedComponent) => {
+    return class userGenderHOC extends Component {
+        render() {
+            return (
+                <WrappedComponent gender={gender} {...this.props} />
+            );
+        }
+    }
+};
+// 計數 HOC
+const CountHOC = (WrappedComponent) => {
+    return class countHOC extends Component {
+        constructor() {
+            super();
+            this.state = {count: 0};
+        }
+
+        incrementCount = () => {
+            this.setState({count: this.state.count + 1});
+        };
+
+        render() {
+            return <WrappedComponent {...this.props} count={this.state.count} incrementCount={this.incrementCount}/>
+        }
+    }
+};
+// 使用者清單元件
+class UserComp extends Component {
+    render() {
+        const {gender, count, incrementCount} = this.props;
+        return (
+            <div>
+                <div>Gender: {gender}</div>
+                <div>Number: {count}</div>
+                <button onClick={incrementCount}>Add Number</button>
+            </div>
+        );
+    }
+}
+// 掛入2個 HOC 的元件
+const UserList =  UserGenderHOC('Male')(CountHOC(UserComp));
+
+
+
+
+
