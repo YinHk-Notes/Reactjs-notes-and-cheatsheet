@@ -43,13 +43,13 @@ class ThemedButton extends React.Component {
 }
 ```
 
-#### React.createContext
+### React.createContext
 Creates a Context object.
 ```jsx
 onst MyContext = React.createContext(defaultValue);
 ```
 
-#### Context.Provider
+### Context.Provider
 Every Context object comes with a Provider React component that allows consuming components to subscribe to context changes.
 
 ```jsx
@@ -62,23 +62,26 @@ contextType property on a class can be assigned a Context object created by Reac
 consume the nearest current value of that Context type using this.context
 ```jsx
 class MyClass extends React.Component {
-  componentDidMount() {
-    let value = this.context;
-    /* perform a side-effect at mount using the value of MyContext */
-  }
-  componentDidUpdate() {
-    let value = this.context;
-    /* ... */
-  }
-  componentWillUnmount() {
-    let value = this.context;
-    /* ... */
-  }
+  static contextType = MyContext;
   render() {
     let value = this.context;
-    /* render something based on the value of MyContext */
+    /* render something based on the value */
   }
 }
-MyClass.contextType = MyContext;
 ```
+
+### Context.Consumer
+ubscribe to a context within a function component.
+
+```jsx
+<MyContext.Consumer>
+  {value => /* render something based on the context value */}
+</MyContext.Consumer>
+```
+
+
+
+
+
+
 
