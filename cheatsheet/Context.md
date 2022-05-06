@@ -43,4 +43,42 @@ class ThemedButton extends React.Component {
 }
 ```
 
+#### React.createContext
+Creates a Context object.
+```jsx
+onst MyContext = React.createContext(defaultValue);
+```
+
+#### Context.Provider
+Every Context object comes with a Provider React component that allows consuming components to subscribe to context changes.
+
+```jsx
+<MyContext.Provider value={/* some value */}>
+```
+
+### Class.contextType
+contextType property on a class can be assigned a Context object created by React.createContext()
+
+consume the nearest current value of that Context type using this.context
+```jsx
+class MyClass extends React.Component {
+  componentDidMount() {
+    let value = this.context;
+    /* perform a side-effect at mount using the value of MyContext */
+  }
+  componentDidUpdate() {
+    let value = this.context;
+    /* ... */
+  }
+  componentWillUnmount() {
+    let value = this.context;
+    /* ... */
+  }
+  render() {
+    let value = this.context;
+    /* render something based on the value of MyContext */
+  }
+}
+MyClass.contextType = MyContext;
+```
 
