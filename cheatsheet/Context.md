@@ -79,6 +79,16 @@ ubscribe to a context within a function component.
 </MyContext.Consumer>
 ```
 
+### Context.displayName
+```jsx
+const MyContext = React.createContext(/* some value */);
+MyContext.displayName = 'MyDisplayName';
+
+<MyContext.Provider> // "MyDisplayName.Provider" in DevTools
+<MyContext.Consumer> // "MyDisplayName.Consumer" in DevTools
+```
+
+
 
 
 
