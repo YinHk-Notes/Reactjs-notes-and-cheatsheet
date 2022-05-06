@@ -7,6 +7,10 @@
  
  // 被當作parameter放入的 Component 稱作 Wrapped Component，因為它是被 HOC 包住的。
  // Higher-Order Component 又稱作 Enhanced Component 或 Composed Component，但它其實是 Function。
+
+ // HOC is a useful tool with the following advantages:
+ // 1. reduce repeated code, reuse the logic 
+ // 2. modulize the component framework
  
  const EnhancedComponent = higherOrderComponent(WrappedComponent);
 
