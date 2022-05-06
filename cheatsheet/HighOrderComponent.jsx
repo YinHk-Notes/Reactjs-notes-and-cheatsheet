@@ -125,6 +125,5 @@ class UserComp extends Component {
 const UserList =  UserGenderHOC('Male')(CountHOC(UserComp));
 
 
-
-
+// ref: https://hsien-w-wei.medium.com/react-higher-order-component-%E9%AB%98%E9%9A%8E%E7%B5%84%E4%BB%B6-4110c03043ba
 
