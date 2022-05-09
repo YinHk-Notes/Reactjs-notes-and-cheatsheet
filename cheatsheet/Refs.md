@@ -94,4 +94,42 @@ class Parent extends React.Component {
 
 ```
 
+> By default, you may not use the ref attribute on function components because they don’t have instances
+
+```jsx
+function MyFunctionComponent() {  return <input />;
+}
+
+class Parent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.textInput = React.createRef();  }
+  render() {
+    // This will *not* work!
+    return (
+      <MyFunctionComponent ref={this.textInput} />    );
+  }
+}
+```
+
+If you want to allow people to take a `ref` to your function component, you can use [`forwardRef`](https://reactjs.org/docs/forwarding-refs.html) (possibly in conjunction with [`useImperativeHandle`](https://reactjs.org/docs/hooks-reference.html#useimperativehandle)), or you can convert the component to a class.
+
+You can, however, **use the `ref` attribute inside a function component** as long as you refer to a DOM element or a class component:
+
+```jsx
+function CustomTextInput(props) {
+  // textInput must be declared here so the ref can refer to it  const textInput = useRef(null);  
+  function handleClick() {
+    textInput.current.focus();  }
+
+  return (
+    <div>
+      <input type="text" ref={textInput} />      
+      <input type="button" value="Focus the text input" onClick={handleClick} />
+    </div>
+  );
+}
+```
+
+
 
