@@ -284,6 +284,24 @@ const props2 = this.props.var2;
 
 </aside>
 
+**Callback-Refs**
+ pass a function. The function receives the React component instance or HTML DOM element as its argument, which can be stored and accessed elsewhere.
+```jsx
+function CustomTextInput(props) {
+  return (
+    <div>
+      <input ref={props.inputRef} />
+    </div>
+  );
+}
+
+class Parent extends React.Component {
+  render() {
+    return <CustomTextInput inputRef={(el) => (this.inputElement = el)} />;
+  }
+}
+```
+
 ## React-redux
 
 **👉🏻   declare store and connect store to react component**
