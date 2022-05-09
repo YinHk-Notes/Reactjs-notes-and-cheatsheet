@@ -56,5 +56,5 @@ The value of the ref differs depending on the type of the node:
 - 除非是要使用 React.forwardRef，否則你應該不會在 function component 上 ref 屬性。
 生命週期：
 
-> React 會在元件掛載**（mount）時為 current 屬性設定內容**，當它**解除掛載（unmount）時則把內容設為 null**。ref 會**在 componentDidMount 或 componentDidUpdate 之前更新**。
+> React 會在元件掛載 **(mount）時為 `current` 屬性設定內容**，當它**解除掛載（unmount）時則把內容設為 null**。ref 會**在 componentDidMount 或 componentDidUpdate 之前更新**。
 
