@@ -25,6 +25,25 @@ const AwesomeInput = React.forwardRef((props, ref) => {
 });
 ```
 
+### use forwardRef in HOC
+**Example:**
+```jsx
+const logPropsHOC = (WrappedComponent) => {
+  class LogProps extends React.Component {
+    componentDidUpdate(prevProps) {
+      console.log('old props: ', prevProps);
+      console.log('new props: ', this.props);
+    }
+
+    render() {
+      const { forwardedRef, ...rest } = this.props;
+      return <WrappedComponent ref={forwardedRef} {...rest} />;
+    }
+  }
+
+  return React.forwardRef((props, ref) => <LogProps {...props} ref={ref} />);
+};
+```
 
 
 
