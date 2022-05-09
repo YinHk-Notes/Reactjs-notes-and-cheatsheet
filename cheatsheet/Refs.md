@@ -7,6 +7,7 @@ There are a few good use cases for refs:
 - Managing focus, text selection, or media playback.
 - Triggering imperative animations.
 - Integrating with third-party DOM libraries.
+- get the method in child component
 
 有了ref之後，我基本上就可以把react component DOM內的元素當成實體DOM，那也就是我可以任意用囉，理論和實作上也不是不行，
 
@@ -52,9 +53,45 @@ The value of the ref differs depending on the type of the node:
 根據 node 類型的不同，current 會得到不同的內容：
 
 - 當 ref 使用在一般的 HTML 元素時，current 會是該 DOM 元素。
-- 當 ref 使用在 React 的類別元件（class component）上時，current 會是該元件的實例。
+- 當 ref 使用在 React 的類別元件（class component）上時，current 會是該class component的instance。
 - 除非是要使用 React.forwardRef，否則你應該不會在 function component 上 ref 屬性。
 生命週期：
 
 > React 會在元件掛載 **(mount）時為 `current` 屬性設定內容**，當它**解除掛載（unmount）時則把內容設為 null**。ref 會**在 componentDidMount 或 componentDidUpdate 之前更新**。
+
+### Using Refs in class component
+
+```jsx
+class Child extends React.Component { 
+  constructor(props) {
+    super(props);
+    //...
+  }
+  
+  handleMethod() {//...}
+  render() {
+    return ();
+  }
+}
+```
+```jsx
+class Parent extends React.Component { 
+  constructor(props) {
+    super(props);
+    this.myRef = React.createRef();
+  }
+  
+  componentDidMount() {
+    this.myRef.current.handleMethod(); //call method inside child component.
+  }
+  
+  render() {
+    return (
+      <Child ref={this.myRef} />
+    );
+  }
+}
+
+```
+
 
