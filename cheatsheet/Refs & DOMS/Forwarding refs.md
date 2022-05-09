@@ -6,6 +6,8 @@ If parent component want to access DOM element in child component, use `React.fo
 
 
 **Example:**
+
+function component
 ```jsx
 const App = () => {
   const awesomeInputRef = React.useRef(null);
@@ -25,7 +27,7 @@ const AwesomeInput = React.forwardRef((props, ref) => {
 });
 ```
 
-
+class component
 ```jsx
 const AwesomeInputWithForwardRef = React.forwardRef((props, ref) => {
   // 把父層的 ref 透過 props 往下傳
