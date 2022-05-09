@@ -25,6 +25,28 @@ const AwesomeInput = React.forwardRef((props, ref) => {
 });
 ```
 
+
+```jsx
+const AwesomeInputWithForwardRef = React.forwardRef((props, ref) => {
+  // 把父層的 ref 透過 props 往下傳
+  return <AwesomeInput forwardedRef={ref} {...props} />;
+});
+```
+```jsx
+const App = () => {
+  const awesomeInputRef = React.useRef(null);
+
+  React.useEffect(() => {
+    console.log(awesomeInputRef.current); // <input type="text">...</input>
+    awesomeInputRef.current.focus(); // 對 AwesomeInput 中的 <input /> 進行操作
+  }, []);
+
+  return <AwesomeInputWithForwardRef ref={awesomeInputRef} />;
+};
+```
+
+
+
 ### use forwardRef in HOC
 **Example:**
 ```jsx
@@ -45,5 +67,7 @@ const logPropsHOC = (WrappedComponent) => {
 };
 ```
 
+
+> 留意 Component 使用 ref 時，是要使用 ref 的功能，還是只是要把父層的 ref 當層 props 往下傳遞，如果是要把 ref 當成 props 往下傳遞，就不能使用 ref 當作屬性名稱，而要換名字，例如 forwardedRef={ref}。
 
 
