@@ -280,11 +280,14 @@ const props2 = this.props.var2;
 ```
 
 <aside>
-🗣 This is destructuring object assignment. What this means is that, this is a shorthand way to get the object properties' value from an object(such as this.props in here). So when you want to extract a property named 'var1' and 'var2' from the 'this.props', by writing the instruction - const { var1, var2 } = this.props;  you ask for the property named 'var1' and 'var2' from 'this.props' to be stored in constants 'var1' and 'var2'. All other properties are simply ignored. And if any of the asked property names are not there, they are simply given 'unassigned' value. After this, you may consider going through more details(magic of it!) here - [MDN - object_destructuring](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Object_destructuring)
+🗣 This is destructuring object assignment. What this means is that, this is a shorthand way to get the object properties' value from an object(such as this.props in here). So when you want to extract a property named 'var1' and 'var2' from the 'this.props', by writing the instruction - const { var1, var2 } = this.props;  you ask for the property named 'var1' and 'var2' from 'this.props' to be stored in constants 'var1' and 'var2'. All other properties are simply ignored. And if any of the asked property names are not there, they are simply given 'unassigned' value. After this, you may consider going through more details(magic of it!) here - [MDN - object_destructuring]https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Object_destructuring
 
-</aside>
+</aside> 
 
-**Callback-Refs**
+
+
+#### **👉🏻  Callback-Refs**
+
  pass a function. The function receives the React component instance or HTML DOM element as its argument, which can be stored and accessed elsewhere.
 ```jsx
 function CustomTextInput(props) {
@@ -320,14 +323,15 @@ ReactDOM.render(
      for function component:    
 
 <aside>
-📌   **useSelector**
+	
+**📌  useSelector**
 
 </aside>
 
       for class component:
 
 <aside>
-📌 **mapStateToProps**
+**📌 mapStateToProps**
 
 </aside>
 
@@ -336,14 +340,14 @@ ReactDOM.render(
 for function component:    
 
 <aside>
-📌   **useDispatch**
+**📌 useDispatch**
 
 </aside>
 
 for class component:
 
 <aside>
-📌 **mapStateToDispatch**
+**📌 mapStateToDispatch**
 
 </aside>
 
