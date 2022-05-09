@@ -131,8 +131,8 @@ function CustomTextInput(props) {
 }
 ```
 
-### Callback Refs
-這種方式**不需要先透過 createRef() 來建立`ref`**，而是直接代入一個函式，這個函式所代入的參數可以得到指稱的 HTML DOM 元素或 React 的元件instance，得到的這個**物件可以存起來在其他地方取用**。
+### 👍🏻Callback Refs
+👉🏻這種方式**不需要先透過 createRef() 來建立`ref`**，而是直接代入一個函式，這個函式所代入的參數可以得到指稱的 HTML DOM 元素或 React 的元件instance，得到的這個**物件可以存起來在其他地方取用**。
 
 Instead of passing a ref attribute created by createRef(), you **pass a function**. The function receives **the React component instance or HTML DOM element as its argument**, which can be stored and accessed elsewhere.
 
@@ -187,8 +187,40 @@ class Parent extends React.Component {
 
 ```
 
+#### `useCallback` with `ref`
 
+```jsx
+import { useRef, useCallback } from 'react';
 
+const DemoCallbackRef = () => {
+  // STEP 2: 建立一個保存 node 的 ref
+  const nodeRef = useRef(null);
+
+  // STEP 1: 使用 callback + ref 取得 node
+  const setTextInput = useCallback((node) => {
+    console.log('[DemoCallbackRef] useCallback', { node });
+
+    // STEP 3: 將 node 設定給 nodeRef，便可將此 ref 保存下來
+    nodeRef.current = node;
+  }, []);
+
+  // STEP 5: 使用剛剛保存下來的 ref
+  const handleClick = useCallback(() => {
+    nodeRef.current.focus();
+  }, []);
+
+  return (
+    <div>
+      {/* STEP 4: 透過 ref 帶入 setTextInput */}
+      <input ref={setTextInput} type="text" />
+      <button type="button" onClick={handleClick}>
+        Focus the input
+      </button>
+    </div>
+  );
+};
+
+```
 
 
 
