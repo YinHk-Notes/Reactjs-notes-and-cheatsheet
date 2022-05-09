@@ -331,6 +331,7 @@ ReactDOM.render(
       for class component:
 
 <aside>
+	
 **📌 mapStateToProps**
 
 </aside>
@@ -340,6 +341,7 @@ ReactDOM.render(
 for function component:    
 
 <aside>
+	
 **📌 useDispatch**
 
 </aside>
@@ -347,6 +349,7 @@ for function component:
 for class component:
 
 <aside>
+	
 **📌 mapStateToDispatch**
 
 </aside>
