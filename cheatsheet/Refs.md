@@ -131,5 +131,70 @@ function CustomTextInput(props) {
 }
 ```
 
+### Callback Refs
+這種方式**不需要先透過 createRef() 來建立`ref`**，而是直接代入一個函式，這個函式所代入的參數可以得到指稱的 HTML DOM 元素或 React 的元件instance，得到的這個**物件可以存起來在其他地方取用**。
+
+Instead of passing a ref attribute created by createRef(), you **pass a function**. The function receives **the React component instance or HTML DOM element as its argument**, which can be stored and accessed elsewhere.
+
+**Example**:
+```jsx
+class CustomTextInput extends React.Component {
+  constructor(props) {
+    super(props);
+
+    // 利用 callback Ref 把取得的 element 保存在 textInputRef 的變數中
+    this.textInputRef = null;
+
+    // Callback Refs
+    this.setTextInputRef = (element) => {
+      this.textInputRef = element;
+    };
+
+    this.focusTextInput = () => {
+      if (this.textInputRef) this.textInputRef.focus();
+    };
+  }
+
+  componentDidMount() {
+    // autofocus the input on mount
+    this.focusTextInput();
+  }
+
+  render() {
+    return (
+      <div>
+        <input type="text" ref={this.setTextInputRef} />
+      </div>
+    );
+  }
+}
+```
+
+```jsx
+function CustomTextInput(props) {
+  return (
+    <div>
+      <input ref={props.inputRef} />
+    </div>
+  );
+}
+
+class Parent extends React.Component {
+  render() {
+    return <CustomTextInput inputRef={(el) => (this.inputElement = el)} />;
+  }
+}
+
+```
+
+
+
+
+
+
+
+
+
+
 
 
