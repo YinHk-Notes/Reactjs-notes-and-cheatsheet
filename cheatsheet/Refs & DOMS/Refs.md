@@ -223,7 +223,10 @@ const DemoCallbackRef = () => {
 ```
 
 
+### Uncontrolled component
+uncontrolled components, where form data is handled by the DOM itself. In a controlled component, form data is handled by a React component
 
+To write an uncontrolled component, instead of writing an event handler for every state update, you can use a ref to get form values from the DOM.
 
 
 
