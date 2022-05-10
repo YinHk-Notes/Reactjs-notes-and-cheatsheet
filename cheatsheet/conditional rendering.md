@@ -42,6 +42,24 @@ const styles = {
 <div className="popup" style={styles.popup}> </div>
 ```
 
+### Preventing Component from Rendering
+just return `null`
+
+```jsx
+function WarningBanner(props) {
+  if (!props.warn) {
+    return null;
+  }
+
+  return (
+    <div className="warning">
+      Warning!
+    </div>
+  );
+}
+```
+
+
 
 
 
