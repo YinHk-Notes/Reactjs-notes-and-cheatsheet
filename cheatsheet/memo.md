@@ -10,7 +10,7 @@ React.memo() 是一個高階組件 (HOC**)，**它接收一個組件 A 作爲參
 
 
 
-
+React.memo() 是一個 HOC，而**useMemo()**是一個 React Hook。使用 useMemo()，我們可以返回記憶值來避免函數的依賴項沒有改變的情況下重新渲染。
 
 
 
