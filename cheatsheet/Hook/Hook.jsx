@@ -85,6 +85,8 @@ function Counter() {
 /* useMemo */
 // Pass a “create” function and an array of dependencies. useMemo will only recompute the memoized value when one of the dependencies has changed. This optimization helps to avoid expensive calculations on every render.
 // 目的是用來「避免重複進行複雜耗時的計算」，所以把計算的結果存起來用
+// memorize value
+// return value of variable
 const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
 
 //eg:
@@ -100,6 +102,7 @@ const menuItemRows = useMemo(
 // 記住 function instance 的 useCallback
 // useCallback → 大部分不用，僅在搭配 PureComponent 等、或是提供多個 useEffect 時使用
 // useCallback 是 useMemo 的一種變體，用來記住一個 function instance。useCallback 其實就等於回傳一個 function 的 useMemo。
+// return a function
 const memoizedCallback = useCallback(
   () => {
     doSomething(a, b);
