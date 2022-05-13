@@ -134,6 +134,12 @@ const nodeRef = useRef(initialValue);
 // Access refs
 const node = nodeRef.current;
 
+// update refs
+nodeRef.current = newValue;
+
+// The reference must be updated either inside a useEffect() callback or inside handlers (event handlers, timer handlers, etc).
+
+
 
 
 
