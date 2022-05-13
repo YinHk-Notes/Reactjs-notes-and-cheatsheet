@@ -6,7 +6,7 @@ his allows us to isolate resource intensive functions so that they will not auto
 
 The useCallback Hook only runs when one of its dependencies update.
 
-use the `useCallback` hook to prevent the function from being recreated unless necessary.
+use the `useCallback` hook to prevent the function from being recreated unless necessary. lets React know to not re-initialize the function every time components re-render.
 
 This is useful when passing callbacks to optimized child components that rely on reference equality to prevent unnecessary renders.
 
