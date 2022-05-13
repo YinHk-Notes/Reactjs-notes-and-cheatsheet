@@ -27,7 +27,36 @@ React.memo() 是一個 HOC，而**useMemo()**是一個 React Hook。使用 useMe
 > When a component is wrapped in `React.memo()`, React renders the component and memoizes the result. Before the next render, if the new props are the same, React reuses the memoized result skipping the next rendering.
 
 
+If your component renders the same result given the same props, you can wrap it in a call to `React.memo` for a performance boost in some cases by memoizing the result. This means that React will skip rendering the component, and reuse the last rendered result.
 
+React.memo only checks for prop changes. If your function component wrapped in `React.memo` has a `useState`, `useReducer` or `useContext` Hook in its implementation, it will still rerender when state or context change.
+
+```jsx
+function MyComponent(props) {
+  /* render using props */
+}
+function areEqual(prevProps, nextProps) {
+  /*
+  return true if passing nextProps to render would return
+  the same result as passing prevProps to render,
+  otherwise return false
+  */
+}
+export default React.memo(MyComponent, areEqual);
+```
+
+or 
+
+```jsx
+onst MyComponent = React.memo(function MyComponent(props) {
+    ...
+});
+
+```
+
+
+
+> Unlike the `shouldComponentUpdate()` method on class components, the `areEqual` function returns true if the props are equal and false if the props are not equal. This is the inverse from `shouldComponentUpdate`.
 
 
 #### ref: 
