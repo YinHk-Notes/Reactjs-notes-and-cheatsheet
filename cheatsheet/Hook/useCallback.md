@@ -7,6 +7,8 @@ his allows us to isolate resource intensive functions so that they will not auto
 The useCallback Hook only runs when one of its dependencies update.
 
 use the `useCallback` hook to prevent the function from being recreated unless necessary.
+
+> One reason to use useCallback is to prevent a component from re-rendering unless its props have changed.
   
 ## useCallback基础用法
 
