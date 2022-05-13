@@ -35,7 +35,24 @@ useEffect(() => {
 	}
 }, [var1, var2,...]);
     
-   
+/*
+	!. 建立、呼叫function component
+	2. 真正更新DOM
+	3. 渲染畫面
+	4. 呼叫useEffect
+	5. 「某個時間點」，偵測到state、props被改變
+	6. 重新呼叫function component
+	7. 在virtual DOM比較所有和原始DOM不一樣的地方
+	8. 真正更新DOM
+	9. 渲染畫面
+	10. 呼叫useEffect
+	11. 某個時間點」，元件被移除
+	12. 呼叫useEffect
+ */
+
+
+    
+ 
 /* useContext */
 const value = useContext(MyContext);
 // Accepts a context object (the value returned from React.createContext) and returns the current context value for that context.
@@ -140,6 +157,30 @@ nodeRef.current = newValue;
 // The reference must be updated either inside a useEffect() callback or inside handlers (event handlers, timer handlers, etc).
 
 
+/* useLayoutEffect */
+
+// The signature is identical to useEffect, but it fires synchronously after all DOM mutations.
+// Prefer the standard useEffect when possible to avoid blocking visual updates.
+// Use this to read layout from the DOM and synchronously re-render
+// This can be useful if you need to make DOM measurements (like getting the scroll position or other styles for an element) and then make DOM mutations or trigger a synchronous re-render by updating state.
+// main difference is time execution, useLayoutEffect trigger first, useEffect later.
+// useLayoutEffect is identical to useEffect, but it’s major key difference is that it gets triggered synchronously after all DOM mutation.
+
+
+/*
+	!. 建立、呼叫function component
+	2. 真正更新DOM
+	3. 呼叫useLayoutEffect
+	4. 渲染畫面
+	5. 「某個時間點」，偵測到state、props被改變
+	6. 重新呼叫function component
+	7. 在virtual DOM比較所有和原始DOM不一樣的地方
+	8. 真正更新DOM
+	9. 呼叫useLayoutEffect
+	10. 渲染畫面
+	11. 某個時間點」，元件被移除
+	12. 呼叫useLayoutEffect
+ */
 
 
 
