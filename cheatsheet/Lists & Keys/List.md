@@ -7,6 +7,9 @@ const listItems = numbers.map((number) =>
 );
 ```
 
+- create a list to store data
+- use array.map() to display data in render item
+- use key in each render item
 
 
 ```jsx
@@ -22,6 +25,15 @@ function NumberList(props) {
     </ul>
   );
 }
+```
+
+```jsx
+const todoItems = todos.map((todo, index) =>
+  // Only do this if items have no stable IDs
+  <li key={index}>
+    {todo.text}
+  </li>
+);
 ```
 
 ### keys
