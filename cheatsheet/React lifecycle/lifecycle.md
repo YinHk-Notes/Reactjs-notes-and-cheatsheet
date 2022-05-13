@@ -1,5 +1,5 @@
 ## React lifecycle
 
-![](../../img/life cycle.jpg)
+![](../../img/lifecycle.jpg)
 
 
