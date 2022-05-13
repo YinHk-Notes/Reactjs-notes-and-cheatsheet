@@ -51,7 +51,7 @@ export default React.memo(MyComponent, areEqual);
 or 
 
 ```jsx
-onst MyComponent = React.memo(function MyComponent(props) {
+const MyComponent = React.memo(function MyComponent(props) {
     ...
 });
 
