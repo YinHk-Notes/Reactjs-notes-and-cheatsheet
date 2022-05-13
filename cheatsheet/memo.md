@@ -24,14 +24,14 @@ React.memo() 是一個 HOC，而**useMemo()**是一個 React Hook。使用 useMe
 > React memo is HOC(Higher Order Component)
 
 
-
+> When a component is wrapped in `React.memo()`, React renders the component and memoizes the result. Before the next render, if the new props are the same, React reuses the memoized result skipping the next rendering.
 
 
 
 
 
 #### ref: 
-https://www.readfog.com/a/1643010870157086720
+https://dmitripavlutin.com/use-react-memo-wisely/
 
 https://www.w3schools.com/react/react_memo.asp
 
