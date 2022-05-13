@@ -32,6 +32,9 @@ If your component renders the same result given the same props, you can wrap it 
 React.memo only checks for prop changes. If your function component wrapped in `React.memo` has a `useState`, `useReducer` or `useContext` Hook in its implementation, it will still rerender when state or context change.
 
 ```jsx
+import { memo } from "react";
+
+
 function MyComponent(props) {
   /* render using props */
 }
