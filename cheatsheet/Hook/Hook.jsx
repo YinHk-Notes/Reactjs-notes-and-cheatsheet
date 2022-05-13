@@ -106,6 +106,7 @@ const menuItemRows = useMemo(
 // useCallback → 大部分不用，僅在搭配 PureComponent 等、或是提供多個 useEffect 時使用
 // useCallback 是 useMemo 的一種變體，用來記住一個 function instance。useCallback 其實就等於回傳一個 function 的 useMemo。
 // return a function
+// prevent for unnecessary rendering in child component
 const memoizedCallback = useCallback(
   () => {
     doSomething(a, b);
