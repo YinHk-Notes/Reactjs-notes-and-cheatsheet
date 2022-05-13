@@ -1,6 +1,6 @@
 ### useMemo
 
-The useMemo Hook can be used to keep expensive, resource intensive functions from needlessly running.
+The useMemo Hook can be used to memorized a return value and keep expensive, resource intensive functions from needlessly running.
 
 In this example, we have an expensive function that runs on every render.
 
