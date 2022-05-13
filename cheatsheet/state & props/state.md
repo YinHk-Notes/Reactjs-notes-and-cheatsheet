@@ -37,9 +37,10 @@ this.setState((state, props) => {
 React this.setState, and useState does not make changes directly to the state object.
 
 React this.setState, and React.useState create queues for React core to update the state object of a React component.
-So the process to u
 
+setState is an asynchronous function, the setState function also does not return a Promise. Using async/await or anything similar will not work.
 
+So the process to update React state is asynchronous for performance reasons. That’s why changes don’t feel immediate.
 
 
 ### Accessing React State right after setting it synchronously
@@ -50,7 +51,6 @@ setState() does not always immediately update the component. It may batch or def
 There are 2 methods that accessing state immediately after seting the state.
 - Using a callback passed to setState.
 - Using componentDidUpdate life cycle method.
-
 
 
 **using callback inside `setState`**
@@ -65,6 +65,11 @@ The example
 ```
 callback function will get triggered when React state has finished updating.
 
+> React.useState doesn’t have accept callback function that gets called after React state has actually been modified. To perform side effects after state has change, you must use the React.useEffect hook.
+
+
+
+
 
 **Using componentDidUpdate life cycle method**
 ```jsx
@@ -74,6 +79,7 @@ componentDidUpdate() is invoked immediately after updating occurs.
 
 
 
-
+#### ref 
+https://linguinecode.com/post/why-react-setstate-usestate-does-not-update-immediately
 
 
