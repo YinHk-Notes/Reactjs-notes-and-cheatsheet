@@ -12,6 +12,48 @@ This is useful when passing callbacks to optimized child components that rely on
 
 > One reason to use useCallback is to prevent a component from re-rendering unless its props have changed.
   
+eg:
+child component will not re render
+```jsx
+import React, { useState, useCallback } from "react";
+import Child from "./Child";
+
+const App = () => {
+  const [count, setCount] = useState(0);
+  console.log("re-render parent component");
+
+  const resetCount = useCallback(() => {
+    setCount(0);
+  }, []);
+  return (
+    <>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount((count) => count + 1)}>Increment</button>
+      <Child reset={resetCount} />
+    </>
+  );
+};
+
+export default App;
+```
+
+```jsx
+import React, { memo } from "react";
+
+const Child = memo(({ reset }) => {
+  console.log("re-render child component.");
+  return (
+    <>
+      <p>child component which resets count</p>
+      <button onClick={reset}>Reset Count</button>
+    </>
+  );
+});
+
+export default Child;
+
+```
+
 ## useCallback基础用法
 
 ## useCallback概念解释
