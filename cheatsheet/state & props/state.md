@@ -1,1 +1,45 @@
+## state
+- use in class component
+- state is an object storing data
+- it is **mutable**, can be changed over time
+- if state has updated, it will trigger component re-render
+
+```jsx
+const [stateObj, setStateObj] = useState({});
+```
+
+```jsx
+this.state = {};
+```
+
+### setState
+```jsx
+setStateObj({});
+
+// with reference to current state and props
+setStateObj({...stetObj, counter: stateObj.counter + props.step, });
+```
+
+```jsx
+this.setState({});
+
+// with with reference to current state and props
+this.setState((state, props) => {
+  return {counter: state.counter + props.step};
+});
+```
+
+### Accessing React State right after setting it synchronously
+
+There are 2 methods that accessing state immediately after seting the state.
+- Using a callback passed to setState.
+- Using componentDidUpdate life cycle method.
+
+
+using callback inside `setState`
+```jsx
+
+
+```
+
 
