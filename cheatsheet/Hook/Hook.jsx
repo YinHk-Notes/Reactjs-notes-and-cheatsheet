@@ -88,6 +88,7 @@ function Counter() {
 // The React useMemo Hook returns a memoized value.
 // The useMemo Hook only runs when one of its dependencies update
 // return a memoized value
+// with 2 parameters, one is callback function with return value another one is array of dependies.
 // This can improve performance.
 const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
 
