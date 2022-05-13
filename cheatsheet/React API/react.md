@@ -1,3 +1,3 @@
 ## React
 
-![](../img/react-concept-logic.png)
+![](../../img/react-concept-logic.png)
