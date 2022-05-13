@@ -126,6 +126,21 @@ useCallback(callback, [...someValues]): // 有加上一些元素值的話，當�
  */
 
 
+/* useRef */
+
+// creat a reference
+const nodeRef = useRef(initialValue);
+
+// Access refs
+const node = nodeRef.current;
+
+
+
+
+
+
+
+
 
 
 
