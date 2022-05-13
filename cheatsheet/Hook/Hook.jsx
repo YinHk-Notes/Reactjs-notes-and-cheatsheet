@@ -116,6 +116,10 @@ const memoizedCallback = useCallback(
   [a, b],
 );
 
+useCallback(callback):     // 如果沒有加上這個陣列，每次都會重新執行函式去產生新的函式
+useCallback(callback, []): // 空陣列的話，回傳的函式不會改變
+useCallback(callback, [...someValues]): // 有加上一些元素值的話，當元素值改變時會重新更新回傳的函式
+
 /* useMemo and useCallback Hooks are similar. The main difference is that useMemo returns a memoized value and useCallback returns a memoized function. 
    - useCallback: 記憶的是函式
    - useMemo: 記憶的是函式執行後的回傳值
