@@ -1,4 +1,7 @@
 ## React memo
+
+Using memo will cause React to skip rendering a component if its props have not changed.
+
 爲什麼在 React 中使用 memoization？
 在 React 函數組件中，當組件中的 props 發生變化時，默認情況下整個組件都會重新渲染。換句話說，如果組件中的任何值更新，整個組件將重新渲染，包括尚未更改其 values/props 的函數 / 組件。
 
@@ -21,3 +24,10 @@ React.memo() 是一個 HOC，而**useMemo()**是一個 React Hook。使用 useMe
 
 #### ref: 
 https://www.readfog.com/a/1643010870157086720
+
+https://www.w3schools.com/react/react_memo.asp
+
+https://ithelp.ithome.com.tw/articles/10240296?sc=iThomeR
+
+
+
