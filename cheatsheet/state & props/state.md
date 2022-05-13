@@ -16,20 +16,20 @@ this.state = {};
 ```jsx
 setStateObj({});
 
-// with reference to current state and props
+// with reference to prev state and props
 setStateObj({...stetObj, counter: stateObj.counter + props.step, });
 ```
 
 ```jsx
 this.setState({});
 
-// with with reference to current state and props
+// with with reference to prev state and props
 this.setState((state, props) => {
   return {counter: state.counter + props.step};
 });
 ```
 
-
+> setState() will always lead to a re-render unless shouldComponentUpdate() returns false. If mutable objects are being used and conditional rendering logic cannot be implemented in shouldComponentUpdate(), calling setState() only when the new state differs from the previous state will avoid unnecessary re-renders.
 
 
 
