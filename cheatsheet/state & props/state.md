@@ -61,7 +61,6 @@ this.setState(state, callback);
 this.setState(newStateObject, () => {
   // ... do some other actions
 });
-The example 
 ```
 callback function will get triggered when React state has finished updating.
 
