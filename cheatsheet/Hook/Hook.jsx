@@ -1,6 +1,5 @@
 //Hooks are a new addition in React 16.8. They let you use state and other React features without writing a class.
 
-
 /* useState */
 const [ statObj, setStateObj ] = useState({v1: 0, v2: 1})
 // setState
@@ -85,8 +84,11 @@ function Counter() {
 /* useMemo */
 // Pass a “create” function and an array of dependencies. useMemo will only recompute the memoized value when one of the dependencies has changed. This optimization helps to avoid expensive calculations on every render.
 // 目的是用來「避免重複進行複雜耗時的計算」，所以把計算的結果存起來用
-// memorize value
-// return value of variable
+// useMemo Hook can be used to keep expensive, resource intensive functions from needlessly running
+// The React useMemo Hook returns a memoized value.
+// The useMemo Hook only runs when one of its dependencies update
+// return a memoized value
+// This can improve performance.
 const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
 
 //eg:
@@ -110,7 +112,7 @@ const memoizedCallback = useCallback(
   [a, b],
 );
 
-
+/* useMemo and useCallback Hooks are similar. The main difference is that useMemo returns a memoized value and useCallback returns a memoized function. */
 
 
 
