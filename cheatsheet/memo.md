@@ -58,8 +58,23 @@ const MyComponent = React.memo(function MyComponent(props) {
 ```
 
 
-
 > Unlike the `shouldComponentUpdate()` method on class components, the `areEqual` function returns true if the props are equal and false if the props are not equal. This is the inverse from `shouldComponentUpdate`.
+
+
+### When to use React.memo()
+- Pure functional component.
+your component is functional and given the same props. always render the same output. pure functional 是指同一個function的input不管執行多少次，output永遠都會一樣。元件而言就是，相同的props進去幾次，畫面永遠都一樣。
+因為我們優化了效能，不渲染多餘的畫面時，不能遺漏渲染某些畫面的可能性(可能元件有某些side effect)，因為畫面不會重新渲染，所以我們必須保證每次同樣的props都會產生相同的畫面。
+- Render often
+- Re-render with same props
+Your component is usaually provided with the same props during re-rendering.
+- Your component is big size
+Contain decent amount of UI elements, need to prevent re-render often.
+
+### When avoid React.memo()
+- If the component isn't heavy(not too big size) and usually renders with different props, most likely you don't need React.memo()
+- Performance-related changes applied incorrectly can even harm performance. Use React.memo() wisely
+
 
 
 #### ref: 
@@ -69,5 +84,6 @@ https://www.w3schools.com/react/react_memo.asp
 
 https://ithelp.ithome.com.tw/articles/10240296?sc=iThomeR
 
+https://dmitripavlutin.com/use-react-memo-wisely/
 
 
