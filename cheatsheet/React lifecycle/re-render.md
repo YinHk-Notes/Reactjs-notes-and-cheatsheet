@@ -8,4 +8,22 @@
 
 
 ### stop for re-render
+**React.memo()**
+```jsx
+React.memo(YourComponent);
+```
 
+**SshouldComponentUpdate**
+
+```jsx
+shouldComponentUpdate(nextProps) {
+    // Rendering the component only if 
+    // passed props value is changed
+  
+    if (nextProps.value !== this.props.value) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+```
