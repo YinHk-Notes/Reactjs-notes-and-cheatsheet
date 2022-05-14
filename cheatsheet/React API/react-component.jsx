@@ -78,10 +78,58 @@ export default Counter1;
 // ref: https://www.geeksforgeeks.org/reactjs-shouldcomponentupdate-method/
 
 
+getSnapshotBeforeUpdate(prevProps, prevState)
+// invoked right before the most recently rendered output is committed to e.g. the DOM
+// It enables your component to capture some information from the DOM (e.g. scroll position) before it is potentially changed.
+
+//eg:
+class ScrollingList extends React.Component {
+  constructor(props) {
+    super(props);
+    this.listRef = React.createRef();
+  }
+
+  getSnapshotBeforeUpdate(prevProps, prevState) {
+    // Are we adding new items to the list?
+    // Capture the scroll position so we can adjust scroll later.
+    if (prevProps.list.length < this.props.list.length) {
+      const list = this.listRef.current;
+      return list.scrollHeight - list.scrollTop;
+    }
+    return null;
+  }
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    // If we have a snapshot value, we've just added new items.
+    // Adjust scroll so these new items don't push the old ones out of view.
+    // (snapshot here is the value returned from getSnapshotBeforeUpdate)
+    if (snapshot !== null) {
+      const list = this.listRef.current;
+      list.scrollTop = list.scrollHeight - snapshot;
+    }
+  }
+
+  render() {
+    return (
+      <div ref={this.listRef}>{/* ...contents... */}</div>
+    );
+  }
+}
 
 
+/* legacy method */
 
+UNSAFE_componentWillMount() {}
+// invoked just before mounting occurs.
 
+UNSAFE_componentWillReceiveProps(nextProps)
+// invoked before a mounted component receives new props
+// If you need to update the state in response to prop changes (for example, to reset it), 
+// you may compare this.props and nextProps and perform state transitions using this.setState() in this method.
+
+UNSAFE_componentWillUpdate(nextProps, nextState)
+// invoked just before rendering when new props or state are being received. 
+// Use this as an opportunity to perform preparation before an update occurs. This method is not called for the initial render.
 
   
   
