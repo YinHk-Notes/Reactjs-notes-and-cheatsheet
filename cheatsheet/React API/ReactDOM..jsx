@@ -1,7 +1,7 @@
 // The react-dom package also provides modules specific to client and server apps
 import * as ReactDOM from 'react-dom';
 
-
+/* createRoot */
 const root = createRoot(container);
 root.render(element);
 
@@ -14,3 +14,9 @@ const element = <h1>Hello, world</h1>;
 
 root.render(element);
 
+
+/* render */
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+ReactDOM.render(<App />,document.getElementById('root'));
