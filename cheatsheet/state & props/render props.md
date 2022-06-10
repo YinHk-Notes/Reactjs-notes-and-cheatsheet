@@ -3,3 +3,5 @@
 
 
 A component with a render prop takes a function that returns a React element and calls it instead of implementing its own render logic.
+
+> use in class component
