@@ -47,3 +47,13 @@ useEffect(() => {
 //when var1, var2,... updated, it will trigger this method
 ```
 
+#### All three combone 
+```jsx
+useEffect(() => {
+	/* componentDidMount code + componentDidUpdate code */
+	return () => {
+		/* componentWillUnmount code */
+	}
+}, [var1, var2,...]);
+```
+
