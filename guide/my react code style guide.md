@@ -123,17 +123,17 @@ const { props1, props2, ...resProps } = props;
 **👉🏻   Parent/ancestor pass props(with state/data) to child/descendant:**
 
 ```jsx
-let **dataProps** = { props1: val1, props2: val2,... }
-<Child { ...**dataProps** }>
+let dataProps = { props1: val1, props2: val2,... }
+<Child { ...dataProps }>
 
 //for common props pass its value to child components
-const **commonProps** = { props1: val1, props2: val2,... };
-<ChildA { ...**commonProps** }>
-<ChildB { ...**commonProps** }>
+const commonProps = { props1: val1, props2: val2,... };
+<ChildA { ...commonProps }>
+<ChildB { ...commonProps }>
 
 //pass local state as props to child components
 let **stateToProps** = { props1: stateObj.state1, props2: stateObj.state2,... };
-<Child { ...**stateToProps** }>
+<Child { ...stateToProps }>
 ```
 
 **👉🏻  Callback function inside function component:**
@@ -262,7 +262,7 @@ const { ... } = this.props;
 //value can't be updated or re-defined by local component, the props read-only
 let { ... } = this.props;
 //value of the props used defined by **let** canbe overrided and re-defined 
-//by local, while **const** can't
+//by local, while `const` can't
 ```
 
 **👍🏻  Receive props (class component)**
