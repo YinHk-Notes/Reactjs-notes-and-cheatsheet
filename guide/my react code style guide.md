@@ -81,7 +81,7 @@ export default withStyles(styles)(HigherOrderComponent);
 
 ```jsx
 function Compponent_Name (props) {
-	const { ... } = props;  
+  const { ... } = props;  
   const [ stateObj, setStateObj ] = useState({...});
 	  ...your remaining code is here...
 };
