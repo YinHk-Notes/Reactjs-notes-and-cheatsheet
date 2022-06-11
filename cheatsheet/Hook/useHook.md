@@ -22,4 +22,28 @@ useEffect(() => {
 }, [prop, state]);
 ```
 
+#### componentDidMount equivalent in function component:
+```jsx
+useEffect(() => {
+	/* ComponentDidMount code */
+}, []);
+```
+
+#### componentWillUnmount equivalent:
+```jsx
+useEffect(() => {
+	...
+	return () => {
+		/* componentWillUnmount code */
+	}
+}, []);
+```
+
+#### componentDidUpdate equivalent:
+```jsx
+useEffect(() => {
+	/* componentDidUpdate code */
+}, [var1, var2,...]);
+//when var1, var2,... updated, it will trigger this method
+```
 
