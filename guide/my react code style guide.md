@@ -132,7 +132,7 @@ const commonProps = { props1: val1, props2: val2,... };
 <ChildB { ...commonProps }>
 
 //pass local state as props to child components
-let **stateToProps** = { props1: stateObj.state1, props2: stateObj.state2,... };
+let stateToProps = { props1: stateObj.state1, props2: stateObj.state2,... };
 <Child { ...stateToProps }>
 ```
 
