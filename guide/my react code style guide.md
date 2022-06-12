@@ -322,24 +322,26 @@ ReactDOM.render(
 
 **for function component:**    
 ```jsx
-📌  useSelector**
+📌  useSelector
 ```
 **for class component:**
 ```jsx
-📌 mapStateToProps**
+📌 mapStateToProps
 ```
 
 **👉🏻  dispatch action from react component to store**
 
 **for function component:**    
 ```jsx
-📌 useDispatch**
+📌 useDispatch
 ```
 
 **for class component:**
 ```jsx
-📌 mapStateToDispatch**
+📌 mapStateToDispatch
 ```
+
+
 
 ### function component 內部寫法
 
