@@ -248,7 +248,7 @@ const updateState = obj => setStateObj({ ...obj });
 ```jsx
 //get the function from parent
 let { updateState } = props; 
-//function fill with value 
+//function fill with value from child
 updateState && updateState({ ...stateObj, state1: val1, state2: val2,... });
 ```
 
