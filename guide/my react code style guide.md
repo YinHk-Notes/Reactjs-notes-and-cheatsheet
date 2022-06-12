@@ -210,11 +210,11 @@ useEffect(() => {
 ```jsx
 function App () {
 	...
-	const handleOnclick = e => {...}
+	const handleOnclick = (param, e) => {...}
   ...
 	return (
 		<div>
-			<button onClick={() => handleOnclick(param)}>Click me</button>
+			<button onClick={() => handleOnclick(param, e)}>Click me</button>
 		</div>)
 }
 ```
