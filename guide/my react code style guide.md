@@ -256,12 +256,12 @@ updateState && updateState({ ...stateObj, state1: val1, state2: val2,... });
 
 ```jsx
 let { ... } = this.state;
-//then use state's name directly without specify **this.state** in front of it.
+//then use state's name directly without specify this.state in front of it.
 const { ... } = this.props;
-//then use props's name directly without specify **this.props** in front of it,
+//then use props's name directly without specify this.props in front of it,
 //value can't be updated or re-defined by local component, the props read-only
 let { ... } = this.props;
-//value of the props used defined by **let** canbe overrided and re-defined 
+//value of the props used defined by let canbe overrided and re-defined 
 //by local, while `const` can't
 ```
 
