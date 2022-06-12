@@ -320,23 +320,23 @@ ReactDOM.render(
 
 **👉🏻  get state from store** 
 
-**for function component:**    
+for function component:  
 ```jsx
 📌  useSelector
 ```
-**for class component:**
+for class component:
 ```jsx
 📌 mapStateToProps
 ```
 
 **👉🏻  dispatch action from react component to store**
 
-**for function component:**    
+for function component:    
 ```jsx
 📌 useDispatch
 ```
 
-**for class component:**
+for class component:
 ```jsx
 📌 mapStateToDispatch
 ```
