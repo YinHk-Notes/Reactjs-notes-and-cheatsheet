@@ -320,45 +320,32 @@ ReactDOM.render(
 
 **👉🏻  get state from store** 
 
-     for function component:    
-
-<aside>
-	
-**📌  useSelector**
-
-</aside>
-
-      for class component:
-
-<aside>
-	
-**📌 mapStateToProps**
-
-</aside>
+**for function component:**    
+```jsx
+📌  useSelector**
+```
+**for class component:**
+```jsx
+📌 mapStateToProps**
+```
 
 **👉🏻  dispatch action from react component to store**
 
-for function component:    
+**for function component:**    
+```jsx
+📌 useDispatch**
+```
 
-<aside>
-	
-**📌 useDispatch**
-
-</aside>
-
-for class component:
-
-<aside>
-	
-**📌 mapStateToDispatch**
-
-</aside>
+**for class component:**
+```jsx
+📌 mapStateToDispatch**
+```
 
 ### function component 內部寫法
 
 ```jsx
 function Component_Name(props) {
-	const { props1, props2, ...resProps } = props;
+  const { props1, props2, ...resProps } = props;
   //stete Hook, declare & initialize states
   const [ stateObj, setStateObj ] = useState({
 		state1: val1;
