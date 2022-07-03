@@ -38,9 +38,9 @@ this.setState((state, props) => {
 **The answer: They’re just queues** \
 React `this.setState`, and `useState` does not make changes directly to the state object.
 
-React `this.setState`, and `React.useState` create queues for React core to update the state object of a React component.
+React `this.setState`, and `React.useState` **create queues for React core to update the state object** of a React component.
 
-setState is an asynchronous function, the setState function also does not return a Promise. Using async/await or anything similar will not work.
+`setState` is an asynchronous function, the `setState` function also does not return a Promise. Using `async/await` or anything similar will not work.
 
 So the process to update React state is asynchronous for performance reasons. That’s why changes don’t feel immediate.
 
