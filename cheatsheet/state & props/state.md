@@ -49,12 +49,12 @@ So the process to update React state is asynchronous for performance reasons. Th
 
 ### Accessing React State right after setting it synchronously
 
-setState() does not always immediately update the component. It may batch or defer the update until later. This makes reading this.state right after calling setState() a potential pitfall. Instead, use `componentDidUpdate` or a setState callback (`setState(updater, callback)`), either of which are guaranteed to fire after the update has been applied.
+`setState()` does not always immediately update the component. It may batch or defer the update until later. This makes reading `this.state` right after calling `setState()` a potential pitfall. Instead, use `componentDidUpdate` or a `setState` callback (`setState(updater, callback)`), either of which are guaranteed to fire after the update has been applied.
 
 
 There are 2 methods that accessing state immediately after seting the state.
-- Using a callback passed to setState.
-- Using componentDidUpdate life cycle method.
+- Using a callback passed to `setState`.
+- Using `componentDidUpdate` life cycle method.
 
 
 
