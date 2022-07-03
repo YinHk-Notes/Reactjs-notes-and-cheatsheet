@@ -70,7 +70,7 @@ this.setState(newStateObject, () => {
 ```
 callback function will get triggered when React state has finished updating.
 
-> React.useState doesn’t have accept callback function that gets called after React state has actually been modified. To perform side effects after state has change, you must use the React.useEffect hook.
+> `React.useState` doesn’t have accept callback function that gets called after React state has actually been modified. To perform side effects after state has change, you must use the `React.useEffect hook`.
 
 
 
