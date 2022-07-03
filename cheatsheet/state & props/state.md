@@ -80,7 +80,7 @@ callback function will get triggered when React state has finished updating.
 ```jsx
 componentDidUpdate(prevProps, prevState);
 ```
-componentDidUpdate() is invoked immediately after updating occurs. 
+`componentDidUpdate()` is invoked immediately after updating occurs. 
 
 
 
