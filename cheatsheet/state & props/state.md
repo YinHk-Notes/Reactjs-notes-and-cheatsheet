@@ -32,6 +32,8 @@ this.setState((state, props) => {
 > `setState()` will always lead to a re-render unless `shouldComponentUpdate()` returns false. If mutable objects are being used and conditional rendering logic cannot be implemented in `shouldComponentUpdate()`, calling `setState(`) only when the new state differs from the previous state will avoid unnecessary re-renders.
 
 
+
+
 ### Why React setState/useState does not update immediately
 **The answer: They’re just queues**
 React this.setState, and useState does not make changes directly to the state object.
@@ -43,6 +45,8 @@ setState is an asynchronous function, the setState function also does not return
 So the process to update React state is asynchronous for performance reasons. That’s why changes don’t feel immediate.
 
 
+
+
 ### Accessing React State right after setting it synchronously
 
 setState() does not always immediately update the component. It may batch or defer the update until later. This makes reading this.state right after calling setState() a potential pitfall. Instead, use `componentDidUpdate` or a setState callback (`setState(updater, callback)`), either of which are guaranteed to fire after the update has been applied.
@@ -51,6 +55,8 @@ setState() does not always immediately update the component. It may batch or def
 There are 2 methods that accessing state immediately after seting the state.
 - Using a callback passed to setState.
 - Using componentDidUpdate life cycle method.
+
+
 
 
 **using callback inside `setState`**
