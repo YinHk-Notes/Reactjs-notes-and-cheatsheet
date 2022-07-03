@@ -35,7 +35,7 @@ this.setState((state, props) => {
 
 
 ### Why React setState/useState does not update immediately
-**The answer: They’re just queues**
+**The answer: They’re just queues** \
 React this.setState, and useState does not make changes directly to the state object.
 
 React this.setState, and React.useState create queues for React core to update the state object of a React component.
