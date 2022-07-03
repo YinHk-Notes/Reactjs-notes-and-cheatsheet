@@ -1,6 +1,6 @@
 ## passing data between components
 
-**Passing data/sharing just like a communication between components.**
+> Passing data/sharing just like a communication between components.
 
 ### Passing state/data to child/**descendant** components
 
