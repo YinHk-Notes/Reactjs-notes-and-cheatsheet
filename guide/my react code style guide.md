@@ -136,7 +136,7 @@ let stateToProps = { props1: stateObj.state1, props2: stateObj.state2,... };
 <Child { ...stateToProps }>
 ```
 
-**👉🏻  Callback function inside function component:**
+**👉🏻  Calling function inside function component:**
 
 ```jsx
 { functionName() }
