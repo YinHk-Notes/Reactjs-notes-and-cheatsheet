@@ -1,7 +1,7 @@
 // Handling Event
 
 // React Event are in camelCase
-<button onClick={()=>handleClick()}>
+<button onClick={  handleClick /* or ()=>handleClick() */ }> 
   Action
 </button>
 
