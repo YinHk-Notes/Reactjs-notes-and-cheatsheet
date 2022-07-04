@@ -1,4 +1,12 @@
 //Hooks are a new addition in React 16.8. They let you use state and other React features without writing a class.
+//Hooks are the functions which "hook into" React state and lifecycle features from function components.
+
+/*
+    Rules of Hooks:
+    - only call Hooks at the top level:
+      - Do not call Hooks inside loops, conditions, or nested functions
+    - Only call Hooks from React functions
+ */
 
 /* useState */
 const [ statObj, setStateObj ] = useState({v1: 0, v2: 1})
