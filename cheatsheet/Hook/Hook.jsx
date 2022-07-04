@@ -10,8 +10,9 @@ setState({ ...stateObj, v2:99 })
 
 useEffect(() => {
   //Runs on every render
-});
+}); 
 
+//with empty square bracket
 useEffect(() => {
 	/* ComponentDidMount code */
 }, []);
@@ -20,6 +21,7 @@ useLayoutEffect(() => {
 	/* ComponentDidMount code */
 }, []);
 
+//with dependencies
 useEffect(() => {
 	/* componentDidUpdate code */
 }, [var1, var2,...]);
