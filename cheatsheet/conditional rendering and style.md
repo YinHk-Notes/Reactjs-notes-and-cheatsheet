@@ -1,4 +1,4 @@
-## conditional rendering
+### conditional rendering
 Use JavaScript operators like if or the conditional operator to create elements representing the current state, and let React update the UI to match them.
 
 depend on the state or props, decide which component is rendered.
