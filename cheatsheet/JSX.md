@@ -47,6 +47,25 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(React.createElement(Hello, {toWhat: 'World'}, null));
 ```
 
+**Eg:  當 JSX 被轉譯成 JavaScript 後就會變成以下這個函式執行：**
+```js
+React.createElement( type, [props], [...children])
+```
+```js
+// This is a JSX element
+const jsxElement = (
+  <h1 className="greeting">
+    Hello, world!
+  </h1>
+);
+
+// it equals to this
+const jsElement = React.createElement(
+  'h1',
+  {className: 'greeting'},
+  'Hello, world!'
+);
+```
 
 #### use comment in JSX
 ```jsx
