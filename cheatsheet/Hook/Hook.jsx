@@ -9,7 +9,7 @@ setState({ ...stateObj, v2:99 })
 //lifecycle method in function component
 
 useEffect(() => {
-  //Runs on every render
+  //Without empty [], the code inside the useEffect will run on every render
 }); 
 
 //with empty square bracket
