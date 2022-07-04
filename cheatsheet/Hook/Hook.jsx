@@ -9,6 +9,10 @@ setState({ ...stateObj, v2:99 })
 //lifecycle method in function component
 
 useEffect(() => {
+  //Runs on every render
+});
+
+useEffect(() => {
 	/* ComponentDidMount code */
 }, []);
 
