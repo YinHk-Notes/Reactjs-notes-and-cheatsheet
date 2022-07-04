@@ -23,6 +23,8 @@ React.createElement(
 )
 ```
 
+JSX 轉譯後會變成 JavaScript 的語法：React.createElement()，而 React.createElement() 執行又會回傳 JavaScript Object，也就是說，我們可以把 JSX 當作一個 JavaScript Object 看待。
+
 #### using JSX vs without JSX in react
 written with JSX:
 ```jsx
