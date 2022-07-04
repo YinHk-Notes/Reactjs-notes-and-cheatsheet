@@ -3,7 +3,7 @@
 #### No dependency passed:
 ```jsx
 useEffect(() => {
-  //Runs on every render
+  //Without empty [], the code inside the useEffect will run on every render
 });
 ```
 
