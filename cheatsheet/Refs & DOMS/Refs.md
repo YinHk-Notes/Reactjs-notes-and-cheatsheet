@@ -232,6 +232,9 @@ To write an uncontrolled component, instead of writing an event handler for ever
 
 
 
+### ref
+https://pjchender.dev/react/react-doc-ref-and-dom/
 
+https://ithelp.ithome.com.tw/articles/10200939
 
 
