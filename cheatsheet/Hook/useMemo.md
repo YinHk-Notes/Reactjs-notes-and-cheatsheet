@@ -3,7 +3,7 @@
 The useMemo Hook can be used to memorized a return value and keep expensive, resource intensive functions from needlessly running.
 
 ```jsx
-const memoizedResult = useMemo(compute, [dependencies]);
+const memoizedResult = useMemo(() => callback(), [dependencies]);
 ```
 
 In this example, we have an expensive function that runs on every render.
