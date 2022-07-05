@@ -416,4 +416,5 @@ useCallback用法很简单，就是包裹住原本的处理函数。关键点在
 欢迎进入下一章节：[useMemo基础用法](https://github.com/puxiao/react-hook-tutorial/blob/master/11%20useMemo%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95.md)  
   
   
-  
+### ref
+https://dmitripavlutin.com/dont-overuse-react-usecallback/
