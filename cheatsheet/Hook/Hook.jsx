@@ -188,6 +188,8 @@ nodeRef.current = newValue;
 // main difference is time execution, useLayoutEffect trigger first, useEffect later.
 // useLayoutEffect is identical to useEffect, but it’s major key difference is that it gets triggered synchronously after all DOM mutation.
 // One of the key differences is that it gets executed right after a React component render lifecycle, and before useEffect gets triggered.
+// The useLayoutEffect function is triggered synchronously before the DOM mutations. However, 
+// the useEffect function is called after the DOM mutations.
 
 /*
 	!. 建立、呼叫function component
