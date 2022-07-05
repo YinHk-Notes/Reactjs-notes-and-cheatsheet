@@ -15,6 +15,13 @@ setState({ ...stateObj, v2:99 })
 
 /* useEffect */
 //lifecycle method in function component
+//A functional React component uses props and/or state to calculate the output. 
+//If the functional component makes calculations that don't target the output value, 
+//then these calculations are named side-effects.
+//Examples of side-effects are fetch requests, manipulating DOM directly, using timer functions 
+//like setTimeout(), and more.
+
+useEffect(callback, [dependencies])
 
 useEffect(() => {
   //Without empty [], the code inside the useEffect will run on every render
