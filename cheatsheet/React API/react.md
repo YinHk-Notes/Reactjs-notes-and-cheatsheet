@@ -9,7 +9,18 @@ React uses ES6 (ECMAScript 6), ECMAScript was created to standardize JavaScript,
 ### What is virtual DOM
 **DOM** stands for ‘Document Object Model. It is a structured representation of the HTML elements that are present in a webpage or web-app. DOM represents the entire UI of your application. The DOM is represented as a tree data structure. It contains a node for each UI element present in the web document.
 
+A virtual DOM object is a *representation*
+ of a DOM object, like a **lightweight copy**. 
 
+React uses Virtual DOM exists which is like a lightweight copy of the actual DOM.
+
+So for every object that exists in the original DOM, there is an object for that in React Virtual DOM.
+
+A virtual DOM object has the same properties as a real DOM object, but it lacks the real thing’s power to directly change what’s on the screen.
+
+**Manipulating the DOM is slow. Manipulating the virtual DOM is much faster**, because nothing gets drawn onscreen. Think of **manipulating the virtual DOM as editing a blueprint**, 
+
+React build the **virtual DOM,** finally the virtual DOM will replaces the existing DOM nodes in browser
 
 ## How to create a simple React app?
 
