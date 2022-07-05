@@ -92,6 +92,7 @@ MyContext.displayName = 'MyDisplayName';
 ### useContext()
 接收一個 `context` object（`React.createContext` 的回傳值）並回傳該 `context` 目前的值。`Context` 目前的值是取決於由上層 component 距離最近的 `<MyContext.Provider>` 的 value prop。
 
+In order to use the Context in a child component, we need to access it using the `useContext` Hook.
 
 ### ref
 https://medium.com/hannah-lin/react-hook-%E7%AD%86%E8%A8%98-usecontext-4bc289976847
