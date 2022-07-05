@@ -19,6 +19,8 @@ React does so by "mounting" (adding nodes to the DOM), "unmounting" (removing th
 - **Update** 👉  growth of your component
 - **Unmount** 👉  death of your component
 
+**Mounting** is the initial phase in which the instance of the component is created and inserted into the DOM. When the component gets successfully inserted into the DOM, the component is said to be mounted. In the **updating phase**, the component gets updated while being present in the DOM. In the **unmounting phase**, the component is removed from the DOM.
+
 ### Rendering vs Mounting
 - "Rendering" is any time a function component gets called (or a class-based render method gets called) which returns a set of instructions for creating DOM.
 - "Mounting" is when React "renders" the component for the first time and actually builds the initial DOM from those instructions.
