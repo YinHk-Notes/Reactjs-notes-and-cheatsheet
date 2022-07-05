@@ -7,7 +7,7 @@ React is an open source JavaScript library/framework developed by Facebook since
 React uses ES6 (ECMAScript 6), ECMAScript was created to standardize JavaScript, and ES6 is the 6th version of ECMAScript, it was published in 2015, and is also known as ECMAScript 2015.
 
 ### What is virtual DOM
-**DOM** stands for ‘Document Object Model’. t is a structured representation of the HTML elements that are present in a webpage or web-app. DOM represents the entire UI of your application. The DOM is represented as a tree data structure. It contains a node for each UI element present in the web document.
+**DOM** stands for ‘Document Object Model. It is a structured representation of the HTML elements that are present in a webpage or web-app. DOM represents the entire UI of your application. The DOM is represented as a tree data structure. It contains a node for each UI element present in the web document.
 
 
 
