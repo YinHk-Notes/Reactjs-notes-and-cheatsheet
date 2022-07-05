@@ -252,6 +252,59 @@ useMemo(create,deps)函数通常传入2个参数，第1个参数为我们定义�
 
 通过这个案例，相信你对useMemo的机制和用法一定有所掌握。
 
+```jsx
+import { useState } from 'react';
+export function CalculateFactorial() {
+  const [number, setNumber] = useState(1);
+  const [inc, setInc] = useState(0);
+  const factorial = factorialOf(number);
+  const onChange = event => {
+    setNumber(Number(event.target.value));
+  };
+  const onClick = () => setInc(i => i + 1);
+  
+  return (
+    <div>
+      Factorial of 
+      <input type="number" value={number} onChange={onChange} />
+      is {factorial}
+      <button onClick={onClick}>Re-render</button>
+    </div>
+  );
+}
+function factorialOf(n) {
+  console.log('factorialOf(n) called!');
+  return n <= 0 ? 1 : n * factorialOf(n - 1);
+}
+```
+
+`useMemo()`
+```jsx
+import { useState, useMemo } from 'react';
+export function CalculateFactorial() {
+  const [number, setNumber] = useState(1);
+  const [inc, setInc] = useState(0);
+  const factorial = useMemo(() => factorialOf(number), [number]);
+  const onChange = event => {
+    setNumber(Number(event.target.value));
+  };
+  const onClick = () => setInc(i => i + 1);
+  
+  return (
+    <div>
+      Factorial of 
+      <input type="number" value={number} onChange={onChange} />
+      is {factorial}
+      <button onClick={onClick}>Re-render</button>
+    </div>
+  );
+}
+function factorialOf(n) {
+  console.log('factorialOf(n) called!');
+  return n <= 0 ? 1 : n * factorialOf(n - 1);
+}
+```
+
 ---
 
 至此，关于useMemo基础用法已经讲完，没有高级用法，直接进入下一个Hook。
