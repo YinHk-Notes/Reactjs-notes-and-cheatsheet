@@ -15,6 +15,9 @@ mounting means putting elements into the **DOM(Document Object Model)**
 - **Update** 👉  growth of your component
 - **Unmount** 👉  death of your component
 
+### Rendering vs Mounting
+- "Rendering" is any time a function component gets called (or a class-based render method gets called) which returns a set of instructions for creating DOM.
+- "Mounting" is when React "renders" the component for the first time and actually builds the initial DOM from those instructions.
 
 ### Reference
 
