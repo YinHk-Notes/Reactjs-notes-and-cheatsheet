@@ -187,7 +187,7 @@ nodeRef.current = newValue;
 // This can be useful if you need to make DOM measurements (like getting the scroll position or other styles for an element) and then make DOM mutations or trigger a synchronous re-render by updating state.
 // main difference is time execution, useLayoutEffect trigger first, useEffect later.
 // useLayoutEffect is identical to useEffect, but it’s major key difference is that it gets triggered synchronously after all DOM mutation.
-
+// One of the key differences is that it gets executed right after a React component render lifecycle, and before useEffect gets triggered.
 
 /*
 	!. 建立、呼叫function component
