@@ -86,4 +86,6 @@ https://ithelp.ithome.com.tw/articles/10240296?sc=iThomeR
 
 https://dmitripavlutin.com/use-react-memo-wisely/
 
+https://pjchender.dev/react/react-memo/
+
 
