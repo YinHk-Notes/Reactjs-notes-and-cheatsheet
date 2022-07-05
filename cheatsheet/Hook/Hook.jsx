@@ -162,6 +162,10 @@ useCallback(callback, [...someValues]): // 有加上一些元素值的話，當�
 /* useMemo and useCallback Hooks are similar. The main difference is that useMemo returns a memoized value and useCallback returns a memoized function. 
    - useCallback: 記憶的是函式
    - useMemo: 記憶的是函式執行後的回傳值
+   
+   The useCallback and useMemo Hooks are similar. The main difference is that useMemo 
+   returns a memoized value and useCallback returns a memoized function.
+   
  */
 
 
