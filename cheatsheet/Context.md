@@ -71,7 +71,7 @@ class MyClass extends React.Component {
 ```
 
 ### Context.Consumer
-ubscribe to a context within a function component.
+Subscribe to a context within a function component.
 
 ```jsx
 <MyContext.Consumer>
