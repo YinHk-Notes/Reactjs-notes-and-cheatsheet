@@ -1,8 +1,9 @@
 ## state
 - use in class component
-- state is an **object** storing data
+- state is a plain JavaScript **object** storing data
 - it is **mutable**, can be changed over time
 - if state has updated, it will **trigger component re-render**
+- State allows us to **manage changing data** in an application
 
 ```jsx
 const [stateObj, setStateObj] = useState({});
