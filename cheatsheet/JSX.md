@@ -1,5 +1,5 @@
 ## JSX
-JSX stand for JavaScript xml, a syntax extension to JavaScript. It allows us to write JavaScript  containing HTML syntax in React.
+JSX stand for **JavaScript xml**, **a syntax extension to JavaScript**. It allows us to write JavaScript **containing HTML syntax** in React.
 
 ```jsx
 //Below is an example of what JSX is! Because we write html inside JavaScript
