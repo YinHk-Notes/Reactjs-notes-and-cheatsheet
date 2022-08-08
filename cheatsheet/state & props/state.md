@@ -4,6 +4,7 @@
 - it is **mutable**, can be changed over time
 - if state has updated, it will **trigger component re-render**
 - State allows us to **manage changing data** in an application
+- state is managed **within the component** 
 
 ```jsx
 const [stateObj, setStateObj] = useState({});
