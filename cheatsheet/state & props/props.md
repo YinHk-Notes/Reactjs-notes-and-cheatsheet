@@ -8,5 +8,6 @@
 - props can be an **object** or **any other data type**
 - props is data or property passed from parent to child
 - props is commnunication between parent and child
+- props get passed to the component (similar to function parameters)
 - props is **immutable, read-only**!!
 
