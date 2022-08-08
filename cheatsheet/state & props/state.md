@@ -1,6 +1,6 @@
 ## state
 - use in class component
-- state is an object storing data
+- state is an **object** storing data
 - it is **mutable**, can be changed over time
 - if state has updated, it will trigger component re-render
 
