@@ -2,7 +2,7 @@
 
 React has some built-in typechecking abilities. To run **typechecking on the props for a component**, you can assign the special **propTypes** property:
 
-> `prop-types` **isrRuntime type checking for React props and similar objects**.
+> `prop-types` **is Runtime type checking for React props and similar objects**.
 
 ```jsx
 import PropTypes from 'prop-types';
