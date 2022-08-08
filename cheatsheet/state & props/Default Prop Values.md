@@ -1,5 +1,5 @@
 ### defaultProps
-You can define default values for your props by assigning to the special defaultProps property.
+You can define default values for your props by assigning to the special `defaultProps` property.
 eg:
 ```jsx
 class Person extends Component {
