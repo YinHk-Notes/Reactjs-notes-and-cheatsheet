@@ -19,7 +19,7 @@ this.state = {};
 setStateObj({});
 
 // with reference to prev state and props
-setStateObj({...stetObj, counter: stateObj.counter + props.step, });
+setStateObj({...stetObj, counter: stateObj.counter + props.step });
 ```
 
 ```jsx
