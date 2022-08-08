@@ -11,10 +11,7 @@
 - **passing state/parameter/data to descendant components**
 
 
-> 📌 Don’t forget to remove listeners of Event Emitter at the end of lifecycle of components.
-
-
-Clean up Event Emitter listener after the lifesycle:
+> 📌 Don’t forget to remove listeners of Event Emitter at the end of lifecycle of components. Please clean up Event Emitter listener after the lifesycle:
 
 - In compomentWillUnmount clean up Event Emitter listener:
     
