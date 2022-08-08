@@ -2,7 +2,7 @@
 - use in class component
 - state is an **object** storing data
 - it is **mutable**, can be changed over time
-- if state has updated, it will trigger component re-render
+- if state has updated, it will **trigger component re-render**
 
 ```jsx
 const [stateObj, setStateObj] = useState({});
