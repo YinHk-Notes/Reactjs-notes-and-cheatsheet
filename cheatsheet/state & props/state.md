@@ -46,7 +46,7 @@ React `this.setState`, and `React.useState` **create queues for React core to up
 
 So the process to update React state is asynchronous for performance reasons. That’s why changes don’t feel immediate.
 
-
+Calls to setState are asynchronous - don’t rely on this.state to reflect the new value immediately after calling setState
 
 
 ### Accessing React State right after setting it synchronously
