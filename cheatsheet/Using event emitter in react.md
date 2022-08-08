@@ -10,10 +10,9 @@
 - **Sending state/parameter/data  to ancestor component**
 - **passing state/parameter/data to descendant components**
 
-<aside>
-📌 Don’t forget to remove listeners of Event Emitter at the end of lifecycle of components.
 
-</aside>
+> 📌 Don’t forget to remove listeners of Event Emitter at the end of lifecycle of components.
+
 
 Clean up Event Emitter listener after the lifesycle:
 
