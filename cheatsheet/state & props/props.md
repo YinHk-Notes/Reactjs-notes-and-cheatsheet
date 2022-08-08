@@ -6,6 +6,7 @@
 - component receive props from parent component.
 - props are passed to components via **HTML attributes**.
 - props can be an **object** or **any other data type**
-- pass props from parent to child
+- props is data or property passed from parent to child
+- props is commnunication between parent and child
 - props is **immutable, read-only**!!
 
