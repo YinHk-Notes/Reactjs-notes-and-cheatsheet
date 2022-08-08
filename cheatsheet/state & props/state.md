@@ -82,7 +82,8 @@ componentDidUpdate(prevProps, prevState);
 ```
 `componentDidUpdate()` is invoked immediately after updating occurs. 
 
-**Tracking state change in hook
+
+**Tracking state change in hook**
 ```jsx
 import {useEffect, useState} from 'react';
 
