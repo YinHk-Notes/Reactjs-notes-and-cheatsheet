@@ -122,12 +122,12 @@ export default Child;
 为了减少这个不必要的重新渲染，如果是类组件，可以在组件shouldComponentUpdate(准备要开始更新前)生命周期函数中，通过比较props和state中前后两次的值，如果完全相等则跳过本次渲染，改为直接使用上一次渲染结果，以此提高性能提升。  
 
 伪代码如下：  
-
+```jsx
     shouldComponentUpdate(nextProps,nextStates){
       //判断xxx值是否相同，如果相同则不进行重新渲染
       return (nextProps.xxx !== this.props.xxx); //注意是 !== 而不是 !=
     }
-
+```
 为了简化我们这一步操作，可以将类组件由默认继承自React.Component改为React.PureComponent。React.PureComponent默认会帮我们完成上面的浅层对比，以跳过本次重新渲染。 
 
 请注意：React.PureComponent会对props上所有可枚举属性做一遍浅层对比。而不像 shouldComponentUpdate中可以有针对性的只对某属性做对比。  
@@ -137,13 +137,13 @@ export default Child;
 React.memo()的使用方法很简单，就是把要导出的函数组件包裹在React.memo中即可。  
 
 伪代码如下：  
-
+```jsx
     import React from 'react'
     function Xxxx() {
       return <div>xx</div>;
     }
     export default React.memo(Xxxx); //使用React.memo包裹住要导出的函数组件
-
+```
 请记住以下2点：  
 1、React.memo()只会帮我们做浅层对比，例如props.name='puxiao'或props.list=[1,2,3]，如果是props中包含复杂的数据结构，例如props.obj.list=[{age:34}]，那么有可能达不到你的预期，因为不会做到深层次对比。  
 2、使用React.memo仅仅是让该函数组件具备了可以跳过本次渲染的基础，若组件在使用的时候属性值中有某些处理函数，那么还需要配合useCallback才可以做到跳过本次重新渲染。  
@@ -167,13 +167,13 @@ React.memo()的使用方法很简单，就是把要导出的函数组件包裹�
 以{}==={}为例，虽然从字面上 === 左右两侧完全相同的，但是实际上在JS中 左右两侧分别为独立的{}对象，各自占有各自的内存空间，因此他们对比的结果是false。
 
 相反，看下面的代码：  
-
+```jsx
     let obj = {};
     let obj2 = obj;
     obj2.name='react';
     console.log(obj===obj2); //true
-
-上面输出结果为true，为何obj===obj2为true？  因为 obj和obj2都是对同一个对象的引用，所以对比结果为true，因为他们最终指向同一个对象。  
+```
+上面输出结果为true，为何`obj===obj2`为true？  因为 **obj和obj2都是对同一个对象的引用**，所以对比结果为true，因为他们最终指向同一个对象。  
 
 还记得本文开头对于useCallback概念解释中的那段文字吗？useCallback的作用是“勾住”组件属性中某些处理函数，创建这些函数对应在react原型链上的变量引用。  
 
@@ -233,7 +233,7 @@ useCallback可以将组件的某些处理函数挂载到react底层原型链上�
 
 ## useCallback函数源码：  
 回到useCallback的学习中，首先看一下React源码中的[ReactHooks.js](https://github.com/facebook/react/blob/master/packages/react/src/ReactHooks.js)。  
-
+```jsx
     //备注：源码采用TypeScript编写，如果不懂TS代码，阅读起来稍显困难
     export function useCallback<T>(
       callback: T,
@@ -242,7 +242,7 @@ useCallback可以将组件的某些处理函数挂载到react底层原型链上�
       const dispatcher = resolveDispatcher();
       return dispatcher.useCallback(callback, deps);
     }
-
+```
 上述代码看不懂没关系，本系列教程只是讲述“如何使用Hook”，并不是“Hook源码分析”。^_^  
 不过请注意第2个参数，deps为该函数依赖的数据变量，值为Array<mixed> 或 void 或 null。 意味着如果该函数没有依赖的情况下，可以传入空数组[]或void或null。个人建议是传入空数组。  
 
@@ -270,7 +270,7 @@ useEffect中第2个依赖变量数组是真正起作用的，是具有关键性�
  
 
 ##### 代码形式：  
-
+```jsx
     import Button from './button'; //引入我们自定义的一个组件<Button>
 
     //组件内部声明一个age变量
@@ -284,7 +284,7 @@ useEffect中第2个依赖变量数组是真正起作用的，是具有关键性�
 
     //使用该处理函数，实为使用该处理函数的在React底层原型链上的引用
     return <Button clickHandler={clickHandler}></Button>
-
+```
 
 ##### 拆解说明：  
 
@@ -306,7 +306,7 @@ useEffect中第2个依赖变量数组是真正起作用的，是具有关键性�
 ## useCallback使用示例：  
 
 若我们有一个自定组件<Button\>，代码如下：  
-
+```jsx
     import React from 'react'
     function Button({label,clickHandler}) {
         //为了方便我们查看该子组件是否被重新渲染，这里增加一行console.log代码
@@ -314,14 +314,14 @@ useEffect中第2个依赖变量数组是真正起作用的，是具有关键性�
         return <button onClick={clickHandler}>{label}</button>;
     }
     export default React.memo(Button); //使用React.memo()包裹住要导出的组件
-
+```
 
 现在，我们要实现一个组件，功能如下：  
 1、组件内部有2个变量age，salary  
 2、有2个自定义组件Button，点击之后分别可以修改age，salary值  
 
 若我们不使用useCallback，代码示例如下：
-
+```jsx
     import React,{useState,useCallback,useEffect} from 'react';
     import Button from './button';
 
@@ -349,7 +349,7 @@ useEffect中第2个依赖变量数组是真正起作用的，是具有关键性�
         </div>
       )
     }
-
+```
 实际运行中你会发现，无论点击哪个按钮，都会收到：   
 rendering ... Bt01  
 rendering ... Bt02  
@@ -357,7 +357,7 @@ rendering ... Bt02
 你只是点击操作了其中一个按钮，另外一个按钮也要跟着重新渲染一次，试想一下如果该组件中有100个子组件都要跟着重新渲染，那真的是性能浪费。  
 
 我们再看一下如果使用useCallback，代码示例如下：  
-
+```jsx
     import React,{useState,useCallback,useEffect} from 'react';
     import Button from './button';
 
@@ -387,7 +387,7 @@ rendering ... Bt02
         </div>
       )
     }
-
+```
 修改后的代码，实际运行就会发现，当点击某个按钮时，仅仅是当前按钮重新做了一次渲染，另外一个按钮则没有重新渲染，而是直接使用上一次渲染结果。
 
 使用useCallback减少子组件没有必要的渲染目的达成。  
@@ -398,13 +398,13 @@ useCallback用法很简单，就是包裹住原本的处理函数。关键点在
 ## 思考题
 
 假设上面示例代码中，做以下修改：每个按钮上新增一个属性：random={Math.floor(Math.random()*100)}  
-
+```js
     <Button label='Bt01' clickHandler={clickHandler01}></Button>
     <Button label='Bt02' clickHandler={clickHandler02}></Button>
     修改为
     <Button label='Bt01' clickHandler={clickHandler01} random={Math.floor(Math.random()*100)}></Button>
     <Button label='Bt02' clickHandler={clickHandler02} random={Math.floor(Math.random()*100)}></Button>
-
+```
 那么请问，此时我们针对性能优化而使用的useCallback还有意义吗？  
 
 答：没有任何意义，虽然我们使用useCallback保证了每次clickHandler是相同的，可是 random 的值每次却是随机不一样的，尽管子组件<Button\>并没有使用到 random 这个值，但是它的加入造成了 props 每次都不一样(其实是 props.random 不一样)，结果就是子组件每一次都会被重新渲染。所以此时useCallback已经失去了存在的意义。  
