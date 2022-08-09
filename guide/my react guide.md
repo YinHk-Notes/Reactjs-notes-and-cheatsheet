@@ -236,7 +236,7 @@ const functionName = (params) => {...};
 
 //from child
 let { functionName } = props;
-fuctionName&&functionName(data);
+fuctionName && functionName(data);
 ```
 
 **update the data/value from the child/descendant component to the local state:**
