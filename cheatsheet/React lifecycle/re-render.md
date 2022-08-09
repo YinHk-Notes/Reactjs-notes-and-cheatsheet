@@ -88,7 +88,7 @@ class App extends React.Component {
 React.memo(YourComponent);
 ```
 
-**SshouldComponentUpdate**
+**SshouldComponentUpdate()**
 
 ```jsx
 shouldComponentUpdate(nextProps) {
