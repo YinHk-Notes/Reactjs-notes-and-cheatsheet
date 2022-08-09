@@ -5,7 +5,7 @@ The useMemo Hook can be used to memorized a return value and keep expensive, res
 ```jsx
 const memoizedResult = useMemo(() => callback(...dependencies), [dependencies]);
 ```
-> Why to use?  To avoid function run on every render unless its dependencies change, this can prevent from unnecessary executating on the function.
+> Why to use?  ***To avoid function run on every render unless its dependencies change***, this can p**revent from unnecessary executating on the function**.
 
 In this example, we have an expensive function that runs on every render.
 
