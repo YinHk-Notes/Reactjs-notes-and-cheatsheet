@@ -6,22 +6,29 @@
 - State allows us to **manage changing data** in an application
 - state is managed **within the component** 
 
+
+**function**
 ```jsx
 const [stateObj, setStateObj] = useState({});
 ```
-
+**class**
 ```jsx
 this.state = {};
 ```
 
 ### setState
+**function**
 ```jsx
 setStateObj({});
 
 // with reference to prev state and props
 setStateObj({...stetObj, counter: stateObj.counter + props.step });
 ```
+**class**
 
+```jsx
+setState(updater, callback)
+```
 ```jsx
 this.setState({});
 
