@@ -2,6 +2,29 @@
 
 響 React 重新渲染的兩大關鍵 props / state ，當virtual-DOM發現props或state改變時，就會渲染使用這些數據對應的畫面UI。
 
+### 1. Re-render component when state changes
+Any time a React component state has changed, React has to re-render the component.
+```jsx
+lass App extends React.Component {
+  state = {
+    mssg: ""
+  };
+
+  handleClick = () => {
+    this.setState({ mssg: "Hi there!" });
+  };
+
+  render() {
+    console.log("render() method");
+    return (
+      <>
+        <button onClick={this.handleClick}>Say something</button>
+        <div>{this.state.mssg}</div>
+      </>
+    );
+  }
+```
+
 
 ### force to re-render
 
