@@ -1,6 +1,6 @@
 ## Context 
   Context ***provides a way to pass data through the component tree*** without having to pass props down manually at every level. \
-  Context is designed to share data that can be considered “global” for a tree of React components Sucha as theme, global style.
+  Context is ***designed to share data that can be considered “global” for a tree of React components*** Sucha as **theme**, **global style**.
 
 ```jsx
 // Using context, we can avoid passing props through intermediate elements:
