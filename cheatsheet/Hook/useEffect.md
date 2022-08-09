@@ -1,4 +1,4 @@
-## UseHook
+## UseEffect
 
 #### No dependency passed:
 ```jsx
