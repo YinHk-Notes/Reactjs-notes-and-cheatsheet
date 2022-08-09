@@ -213,11 +213,12 @@ useEffect(() => {
 function App () {
 	...
 	const handleOnclick = (param, e) => {...}
-  ...
+        ...
 	return (
-		<div>
-			<button onClick={() => handleOnclick(param, e)}>Click me</button>
-		</div>)
+	 <div>
+	   <button onClick={() => handleOnclick(param, e)}>Click me</button>
+	 </div>
+	)
 }
 ```
 
