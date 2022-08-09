@@ -1,6 +1,6 @@
 ## React
 
-![](../../img/react-concept-logic.png)
+![](../img/react-concept-logic.png)
 ### What is react?
 ***React is an open source JavaScript library/framework developed by Facebook since 2013 using in frontend***.
 
