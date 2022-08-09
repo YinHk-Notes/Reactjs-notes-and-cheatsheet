@@ -27,6 +27,15 @@ A virtual DOM object has the same properties as a real DOM object, but it lacks 
 
 > React build the **virtual DOM,** finally the virtual DOM will **replaces the existing DOM nodes** in browser
 
+| Real DOM | Virtual  DOM |
+| --- | --- |
+| 1. It updates slow. | 1. It updates faster. |
+| 2. Can directly update HTML. | 2. Can’t directly update HTML. |
+| 3. Creates a new DOM if element updates. | 3. Updates the JSX if element updates. |
+| 4. DOM manipulation is very expensive. | 4. DOM manipulation is very easy. |
+| 5. Too much of memory wastage. | 5. No memory wastage. |
+
+
 ## How to create a simple React app?
 
 There are two ways to use React in your web application. The First way is to build a new React app, second is to add React to your current web app/ website no matter it was built by React or not, you can choose which part of your web app to use React as you like!
