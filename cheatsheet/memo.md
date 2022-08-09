@@ -18,7 +18,7 @@ React.memo() 是一個 HOC，而`useMemo()`是一個 React Hook。使用 `useMem
 
 影響 React 重新渲染的兩大關鍵 props / state ，當virtual-DOM發現props或state改變時，就會渲染使用這些數據對應的畫面UI。因此在優化效能的路上，就是需要減少一些不必要但卻很昂貴的渲染。
 
-昨天我們談到了useMemo，可以在某個對應的state沒變時，不重新渲染某個數值及其畫面。那props也有個對應的工具存在，也就是說當props沒改變時，我們就不去重新渲染畫面。這個東西便是React.memo。
+昨天我們談到了useMemo，可以在某個對應的state沒變時，不重新渲染某個數值及其畫面。**那props也有個對應的工具存在，也就是說當props沒改變時，我們就不去重新渲染畫面。這個東西便是`React.memo`。**
 
 
 > React memo is HOC(Higher Order Component)
