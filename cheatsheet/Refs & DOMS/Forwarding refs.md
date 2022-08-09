@@ -16,7 +16,7 @@ const App = () => {
   // App mounted 的時候讓 AwesomeInput 中的 input 元素 focus
   React.useEffect(() => {
     console.log(awesomeInputRef.current); // <input type="text">...</input>
-    awesomeInputRef.current.focus(); // 對 AwesomeInput 中的 <input /> 進行操作
+    awesomeInputRef.current.focus();      // 對 AwesomeInput 中的 <input /> 進行操作
   }, []);
 
   return <AwesomeInput ref={awesomeInputRef} />;
