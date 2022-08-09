@@ -102,3 +102,6 @@ shouldComponentUpdate(nextProps) {
     }
   }
 ```
+
+### ref
+https://blog.logrocket.com/how-when-to-force-react-component-re-render/
