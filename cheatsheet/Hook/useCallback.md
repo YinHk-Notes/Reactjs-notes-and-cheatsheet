@@ -7,7 +7,7 @@ wrapping every callback function inside useCallback():
  const memoizedCallback = useCallback(() => {...}, [prop]);
 ```
 ```jsx
- const memoizedCallback = useCallback(() => { callback(...dependencies) }, [...dependencies]);
+ const memoizedCallback = useCallback(() => callback(...dependencies), [...dependencies]);
 ```
 his allows us to isolate resource intensive functions so that they will not automatically run on every render.
 
