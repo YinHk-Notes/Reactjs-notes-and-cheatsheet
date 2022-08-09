@@ -62,8 +62,27 @@ class App extends React.Component {
 ### force to re-render
 
 
+```jsx
+class App extends React.Component {
 
-### stop for re-render
+  handleClick = () => {
+    // force a re-render
+    this.forceUpdate();
+  };
+
+  render() {
+    console.log('App component: render()')
+    return (
+      <>
+        <button onClick={this.handleClick}>Say something</button>
+      </>
+    );
+  }
+}
+```
+
+
+### stop / prevent for re-render
 **React.memo()**
 ```jsx
 React.memo(YourComponent);
