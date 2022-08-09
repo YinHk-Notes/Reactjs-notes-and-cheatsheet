@@ -9,5 +9,5 @@
 - props is data or property passed from parent to child
 - props is commnunication between parent and child
 - props get passed to the component (similar to function parameters)
-- props is **immutable, read-only**!!
+- props is **immutable**, don't modify it directly, just **read-only**!!
 
