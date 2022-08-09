@@ -60,7 +60,9 @@ class App extends React.Component {
 
 
 ### force to re-render
+To force a React component to re-render is not recommended. Normally we should prevent forcing React to re-render components. If React fails to do re-render components automatically, it’s likely that an underlying issue in your project is preventing the components from updating correctly.  
 
+**Always use props & state changes to cause a new render!**
 
 ```jsx
 class App extends React.Component {
