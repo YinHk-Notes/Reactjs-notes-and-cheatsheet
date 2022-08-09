@@ -82,13 +82,13 @@ class App extends React.Component {
 ```
 
 
-### stop / prevent for re-render
+### stop / avoid re-render
 **React.memo()**
 ```jsx
 React.memo(YourComponent);
 ```
 
-**SshouldComponentUpdate()**
+**shouldComponentUpdate()**
 
 ```jsx
 shouldComponentUpdate(nextProps) {
