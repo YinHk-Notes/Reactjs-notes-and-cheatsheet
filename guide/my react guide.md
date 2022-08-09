@@ -278,8 +278,8 @@ const { props1, props2, ...resProps } = this.props;
 same as
 
 ```jsx
-const props1 = this.props.var1;
-const props2 = this.props.var2;
+const props1 = this.props.props1;
+const props2 = this.props.props2;
 ```
 
 <aside>
