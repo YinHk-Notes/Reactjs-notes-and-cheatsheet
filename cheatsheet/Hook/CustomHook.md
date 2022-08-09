@@ -1,5 +1,5 @@
 ## Building Your Own Hooks
-Share the logic among functional components for specific feature by using hook.
+**Share the logic among functional components** for specific feature by using hook.
 
 Traditionally in React, we’ve had two popular ways to share stateful logic between components: **render props** and **higher-order components**.
 
