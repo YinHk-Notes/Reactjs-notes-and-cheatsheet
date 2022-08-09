@@ -64,6 +64,13 @@ To force a React component to re-render is not recommended. Normally we should p
 
 **Always use props & state changes to cause a new render!**
 
+**component.forceUpdate(callback)**
+```jsx
+someMethod() {
+   // Force a render without state change...
+   this.forceUpdate();
+ }
+```
 ```jsx
 class App extends React.Component {
 
