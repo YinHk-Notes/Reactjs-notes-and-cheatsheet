@@ -121,7 +121,7 @@ shouldComponentUpdate(nextProps) {
     } else {
       return false;
     }
-  }
+}
 ```
 
 ### ref
