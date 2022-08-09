@@ -26,9 +26,34 @@ class App extends React.Component {
 ```
 
 ### 2. Re-render component when `props` change
+When local state has changed, it also trigger child component to re-render if the state pass as props to the child.
 
 ```jsx
+class Child extends React.Component {
+  render() {
+    console.log('Child component: render()');
+    return {this.props.message};
+  }
+}
 
+class App extends React.Component {
+  state = {
+    mssg: ""
+  };
+
+  handleClick = () => {
+    this.setState({ mssg: "Hi there!" });
+  };
+
+  render() {
+    return (
+      <>
+        <button onClick={this.handleClick}>Say something</button>
+        <Child message={this.state.mssg} />
+      </>
+    );
+  }
+}
 
 ```
 
