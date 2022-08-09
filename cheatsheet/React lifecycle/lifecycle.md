@@ -12,7 +12,7 @@ React does so by "**mounting**" (**adding nodes to the DOM**), "**unmounting**" 
 
 ### What is React Lifecyle method?
 
-- You can think of React lifecycle methods as the series of events that happen from the birth of a React component to its death.
+- You can think of React lifecycle methods as **the series of events** that happen from the birth of a React component to its death.
 - **componentDidMount()**, **componentDidUpdate()**, **componentWillUnmount()**, these are examples of Lifecyle method.
 - Lifecyle method is for class component only, not for function component.
 - **Mounting** 👉 birth of your component
