@@ -27,7 +27,7 @@ setStateObj({...stetObj, counter: stateObj.counter + props.step });
 **class**
 
 ```jsx
-setState(updater, callback)
+setState(updateState, callback)
 ```
 ```jsx
 this.setState({});
@@ -35,7 +35,7 @@ this.setState({});
 /*  How do I update state with values that depend on the current state?
 
     Passing an update function allows you to access the current state value inside the updater. 
-    Pass an updater function instead of an object if you need to compute values based on the current state 
+    Pass an updater function in updateState instead of an object if you need to compute values based on the current state 
     
     updater function: (state, props) => stateChange 
     
@@ -99,6 +99,14 @@ componentDidUpdate(prevProps, prevState);
 
 
 **Tracking state change in hook**
+
+> cannot use callback directly in the useState hook. To use callback in the useState hook, we need to use the useEffect hook that triggers after state update and call the function after that.
+
+```jsx
+const [state, setState] = useState();
+useEffect(() => { callback }, [state])
+```
+
 ```jsx
 import {useEffect, useState} from 'react';
 
