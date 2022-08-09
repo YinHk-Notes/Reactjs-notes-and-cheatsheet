@@ -22,9 +22,10 @@ So for every object that exists in the original DOM, there is an object for that
 
 A virtual DOM object has the same properties as a real DOM object, but it lacks the real thing’s power to directly change what’s on the screen.
 
-**Manipulating the DOM is slow. Manipulating the virtual DOM is much faster**, because nothing gets drawn onscreen. Think of **manipulating the virtual DOM as editing a blueprint**, 
+> **Manipulating the DOM is slow. Manipulating the virtual DOM is much faster**, because nothing gets drawn onscreen. Think of **manipulating the virtual DOM as editing a blueprint**, 
 
-React build the **virtual DOM,** finally the virtual DOM will replaces the existing DOM nodes in browser
+
+> React build the **virtual DOM,** finally the virtual DOM will **replaces the existing DOM nodes** in browser
 
 ## How to create a simple React app?
 
