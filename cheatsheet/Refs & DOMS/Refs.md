@@ -3,7 +3,7 @@
 
 `Refs` provide a way to ***access DOM nodes or React elements created in the render method***.
 
-react creates virtual Dom, if you want to access this virtual Dom node, just use "Refs"
+react creates virtual Dom, if you want to access this virtual Dom node, just use `Refs`
 
 There are a few good use cases for refs:
 - Managing focus, text selection, or media playback.
