@@ -14,7 +14,7 @@ const [ statObj, setStateObj ] = useState({v1: 0, v2: 1})
 setState({ ...stateObj, v2:99 })
 
 /* useEffect */
-//lifecycle method in function component
+//Use lifecycle features in function component
 //The useEffect Hook allows you to perform side effects in your components.
 //A functional React component uses props and/or state to calculate the output. 
 //If the functional component makes calculations that don't target the output value, 
