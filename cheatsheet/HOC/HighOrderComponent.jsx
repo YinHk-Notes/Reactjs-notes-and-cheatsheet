@@ -13,7 +13,7 @@
  // 1. reduce repeated code, reuse the logic 
  // 2. modulize the component framework
  
- const EnhancedComponent = higherOrderComponent(WrappedComponent);
+ //const EnhancedComponent = higherOrderComponent(WrappedComponent);
 
 /* 
    將你想要重複使用的程式碼或邏輯撰寫成 React Component
