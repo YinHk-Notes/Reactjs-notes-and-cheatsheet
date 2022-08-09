@@ -3,6 +3,7 @@
     return a component that wrap a Component(return a wrapped component).
     Higher Order Component 指的是在 React 中能夠幫助我們重複使用程式碼(logic, methods)的 React Component。具體來說 Higher Order Component 
     是一個 function，而這個 function 可以把 Component 當作參數傳入，並且回傳一個「增強版」的 Component。
+    HOC is a function to wrap a component and return that wrapped component.
  */
  
  // 被當作parameter放入的 Component 稱作 Wrapped Component，因為它是被 HOC 包住的。
