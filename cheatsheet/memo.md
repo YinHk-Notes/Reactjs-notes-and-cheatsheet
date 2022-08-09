@@ -73,7 +73,7 @@ Contain decent amount of UI elements, need to prevent re-render often.
 
 ### When avoid React.memo()
 - If the component isn't heavy(not too big size) and usually renders with different props, most likely you don't need React.memo()
-- Performance-related changes applied incorrectly can even harm performance. Use React.memo() wisely
+- Performance-related changes applied incorrectly can even harm performance. Use `React.memo()` wisely
 
 
 
