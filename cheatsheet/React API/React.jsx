@@ -56,7 +56,7 @@ const element = (
 // config should contain all new props, key, or ref.
 // The resulting element will have the original element’s props with the new props merged in shallowly.
 // New children will replace existing children. 
-//  key and ref from the original element will be preserved if no key and ref present in the config
+// key and ref from the original element will be preserved if no key and ref present in the config
 
 React.cloneElement(
   element,
