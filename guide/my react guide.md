@@ -90,7 +90,7 @@ function Compponent_Name (props) {
 👉🏻  **Declare state in function component**
 
 ```jsx
-const [ stateObj, SetStateObj ] = useState({ ...declare stete here... });
+const [ stateObj, SetStateObj ] = useState({ ...declare state here... });
 ```
 
 👉🏻   **Manage multiple State Values:**
