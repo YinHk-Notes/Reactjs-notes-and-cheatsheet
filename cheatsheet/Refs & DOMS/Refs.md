@@ -230,7 +230,7 @@ const DemoCallbackRef = () => {
 ### Uncontrolled component
 uncontrolled components, where ***form data is handled by the DOM itself***. In a controlled component, ***form data is handled by a React component***
 
-To write an uncontrolled component, instead of writing an event handler for every state update, you can use a ref to get form values from the DOM.
+> To write an uncontrolled component, instead of writing an event handler for every state update, you can **use a `ref` to get form values from the DOM**.
 
 這種把表單資料交給 React 來處理的就稱作 Controlled Components，也就是受 React 控制的資料；相對地，如果不把表單資料交給 React，而是像過去一樣，選取到該表單元素後，才從該表單元素取出值的這種做法，就稱作 Uncontrolled Components，也就是不受 React 控制的資料。
 
