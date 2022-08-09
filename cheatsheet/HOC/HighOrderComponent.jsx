@@ -48,7 +48,7 @@ const HOC = (WrappedComponent) => {
         }
 
         render() {
-            return <WrappedComponent {...this.props} say={this.state.say}/>
+            return <WrappedComponent {...this.props} say={this.state.say} />
         }
     }
 };
