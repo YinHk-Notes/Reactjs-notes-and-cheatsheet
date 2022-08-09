@@ -1,4 +1,4 @@
-# My react coding preference
+# My react coding guide
 
 **Airbnb React/JSX Style Guide**
 
