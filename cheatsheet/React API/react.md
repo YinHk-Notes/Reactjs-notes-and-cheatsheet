@@ -10,7 +10,7 @@
 **DOM** stands for "**Document Object Model**". 
 
 - It is ***a structured representation of the HTML elements that are present in a webpage***. 
-- DOM represents the **entire UI** of your application. 
+- DOM represents the **entire UI** of your application you can see in the browser. 
 - The DOM is represented as a **tree data structure**. It ***contains a node for each UI element present in the web document***.
 
 A virtual DOM object is a *representation*
