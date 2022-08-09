@@ -34,10 +34,10 @@ const higherOrderComponent = (WrappedComponent) => {
 export default higherOrderComponent;
   
     
-//eg1: 
-/* This is a HOC */
+/*   Examples of HOC   */
 
-// 簡易的 HOC
+    
+// 簡易的 HOC    
 const HOC = (WrappedComponent) => {
     return class simpleHOC extends Component {
         constructor() {
@@ -60,9 +60,9 @@ class SimpleComp extends Component {
 // 使用掛入完的元件
 const Simple =  HOC(SimpleComp);
 
+---------------------------------------------------------------------------------------------
 
-//傳參數的 HOC:
-// 可傳入性別參數的 HOC
+//傳參數的 HOC: 可傳入性別參數的 HOC  
 const UserGenderHOC = (gender) => (WrappedComponent) => {
     return class userGenderHOC extends Component {
         render() {
@@ -82,8 +82,10 @@ class BaseComp extends Component {
 // 傳入參數並使用元件
 const Male =  UserGenderHOC('Male')(BaseComp);
 
-
+-----------------------------------------------------------------------------------------------
+    
 //multi HOC
+    
 // 可傳入性別參數的 HOC
 const UserGenderHOC = (gender) => (WrappedComponent) => {
     return class userGenderHOC extends Component {
@@ -94,6 +96,7 @@ const UserGenderHOC = (gender) => (WrappedComponent) => {
         }
     }
 };
+
 // 計數 HOC
 const CountHOC = (WrappedComponent) => {
     return class countHOC extends Component {
@@ -111,6 +114,7 @@ const CountHOC = (WrappedComponent) => {
         }
     }
 };
+    
 // 使用者清單元件
 class UserComp extends Component {
     render() {
@@ -127,6 +131,7 @@ class UserComp extends Component {
 // 掛入2個 HOC 的元件
 const UserList =  UserGenderHOC('Male')(CountHOC(UserComp));
 
+-------------------------------------------------------------------------------------------------------
 
 // ref: https://hsien-w-wei.medium.com/react-higher-order-component-%E9%AB%98%E9%9A%8E%E7%B5%84%E4%BB%B6-4110c03043ba
 
