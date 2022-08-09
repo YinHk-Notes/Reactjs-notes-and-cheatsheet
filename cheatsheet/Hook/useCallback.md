@@ -9,9 +9,11 @@ wrapping every callback function inside useCallback():
 ```jsx
  const memoizedCallback = useCallback(() => callback(...dependencies), [...dependencies]);
 ```
-- This allows us to isolate resource intensive functions so that they **will not automatically run on every render**.
+- This allows us to isolate resource intensive functions so that they will not automatically run on every render.
 
 - The `useCallback` Hook only runs when one of its dependencies update.
+
+- `useCallback` memorize the function, and **avoid automatically run on every render**. If dependecies doesn't change, function won't run.
 
 - If the function passed as `props` to child component, during every render the function will run again.This may lead to child component for unnecessary re-render as `props` change even child component wrapped by `React memo`.  Therefore, use the `useCallback` hook to **prevent the function from being recreated unless necessary**. lets React know to not re-initialize the function every time components re-render.
 
