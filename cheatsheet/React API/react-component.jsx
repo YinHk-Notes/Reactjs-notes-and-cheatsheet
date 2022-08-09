@@ -117,6 +117,18 @@ class ScrollingList extends React.Component {
 }
 
 
+static getDerivedStateFromProps(props, state)
+// invoked right before calling the render method, both on the initial mount and on subsequent updates.
+// It returns an object to update the state, or null to update nothing.
+
+
+component.forceUpdate(callback)
+// If your render() method depends on some other data, you can tell React that the component needs 
+// re-rendering by calling forceUpdate().
+// Calling forceUpdate() will cause render() to be called on the component, skipping shouldComponentUpdate().
+// Normally you should try to avoid all uses of forceUpdate(). Should only rely on state and props changes to trigger re-render.
+
+
 /* legacy method */
 
 UNSAFE_componentWillMount() {}
