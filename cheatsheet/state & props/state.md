@@ -25,7 +25,16 @@ setStateObj({...stetObj, counter: stateObj.counter + props.step });
 ```jsx
 this.setState({});
 
-// Pass an updater function instead of an object if you need to compute values based on the current state 
+/*  How do I update state with values that depend on the current state?
+
+    Passing an update function allows you to access the current state value inside the updater. 
+    Pass an updater function instead of an object if you need to compute values based on the current state 
+    
+    updater function: (state, props) => stateChange 
+    
+    Pass a function instead of an object to setState to ensure the call always uses 
+    the most updated version of state (see below). */
+
 // with reference to prev state and props
 this.setState((state, props) => {
   return {counter: state.counter + props.step};
@@ -33,8 +42,6 @@ this.setState((state, props) => {
 ```
 
 > `setState()` will always lead to a re-render unless `shouldComponentUpdate()` returns false. If mutable objects are being used and conditional rendering logic cannot be implemented in `shouldComponentUpdate()`, calling `setState(`) only when the new state differs from the previous state will avoid unnecessary re-renders.
-
-
 
 
 ### Why React setState/useState does not update immediately
