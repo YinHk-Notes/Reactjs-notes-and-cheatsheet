@@ -94,6 +94,8 @@ MyContext.displayName = 'MyDisplayName';
 
 In order to use the Context in a child component, we need to access it using the `useContext` Hook.
 
+`useContext(MyContext)` lets you read the context and subscribe to its changes.
+
 ### ref
 https://medium.com/hannah-lin/react-hook-%E7%AD%86%E8%A8%98-usecontext-4bc289976847
 
