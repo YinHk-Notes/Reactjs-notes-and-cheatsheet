@@ -1,10 +1,13 @@
 ## useCallback
 
-useCallback Hook returns a memoized callback function.
+`useCallback` Hook **returns a memoized callback function**.
  
 wrapping every callback function inside useCallback():
 ```jsx
- const memoizedCallback = useCallback(() => {}, [prop]);
+ const memoizedCallback = useCallback(() => {...}, [prop]);
+```
+```jsx
+ const memoizedCallback = useCallback(() => { callback(...dependencies) }, [...dependencies]);
 ```
 his allows us to isolate resource intensive functions so that they will not automatically run on every render.
 
