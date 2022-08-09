@@ -17,7 +17,7 @@ use the `useCallback` hook to prevent the function from being recreated unless n
 
 This is useful when passing callbacks to optimized child components that rely on reference equality to prevent unnecessary renders.
 
-> One reason to use useCallback is to prevent a component from re-rendering unless its props have changed.
+> **Why to use? One reason to use `useCallback` is to ***prevent a component from re-rendering unless its props / dependencies have changed***.**
   
 eg:
 child component will not re render
