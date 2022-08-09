@@ -25,6 +25,7 @@ setStateObj({...stetObj, counter: stateObj.counter + props.step });
 ```jsx
 this.setState({});
 
+// Pass an updater function instead of an object if you need to compute values based on the current state 
 // with reference to prev state and props
 this.setState((state, props) => {
   return {counter: state.counter + props.step};
