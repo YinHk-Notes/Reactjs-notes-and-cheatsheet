@@ -24,12 +24,12 @@ React.memo() 是一個 HOC，而`useMemo()`是一個 React Hook。使用 `useMem
 > React memo is HOC(Higher Order Component)
 
 
-> When a component is wrapped in `React.memo()`, React renders the component and memoizes the result. Before the next render, if the new props are the same, React reuses the memoized result skipping the next rendering.
+> When a component is wrapped in `React.memo()`, React renders the component and memoizes the result. Before the next render, if the new `props` are the same, React reuses the memoized result skipping the next rendering.
 
 
-If your component renders the same result given the same props, you can wrap it in a call to `React.memo` for a performance boost in some cases by memoizing the result. This means that React will skip rendering the component, and reuse the last rendered result.
+If your component renders the same result given the same props, you can wrap it in a call to `React.memo` for a performance boost in some cases by memoizing the result. This means that React will **skip rendering the component, and reuse the last rendered result**.
 
-React.memo only checks for prop changes. If your function component wrapped in `React.memo` has a `useState`, `useReducer` or `useContext` Hook in its implementation, it will still rerender when state or context change.
+`React.memo` only **checks for prop changes**. If your function component wrapped in `React.memo` has a `useState`, `useReducer` or `useContext` Hook in its implementation, it will still rerender when state or context change.
 
 ```jsx
 import { memo } from "react";
