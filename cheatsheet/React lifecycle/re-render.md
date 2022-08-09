@@ -64,7 +64,7 @@ To force a React component to re-render is not recommended. Normally we should p
 
 **Always use props & state changes to cause a new render!**
 
-**component.forceUpdate(callback)**
+**`component.forceUpdate(callback)`**
 ```jsx
 someMethod() {
    // Force a render without state change...
@@ -89,7 +89,19 @@ class App extends React.Component {
   }
 }
 ```
-
+**force update on a function component**
+```jsx
+//Replace state objects with a new instance of themselves, eg:
+someMethod() {
+   // Force a render with a simulated state change
+   setStateObj({ ...stateObj });
+}
+```
+```jsx
+//Have an empty state variable trigger updates
+const [, updateState] = React.useState();
+const forceUpdate = React.useCallback(() => updateState({}), []);
+```
 
 ### stop / avoid re-render
 **React.memo()**
