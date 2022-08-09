@@ -9,11 +9,11 @@ Using memo will cause React to skip rendering a component if its props have not 
 
 React.memo() 隨 React v16.6 一起發佈。雖然類組件已經允許您使用 PureComponent 或 shouldComponentUpdate 來控制重新渲染，但 React 16.6 引入了對函數組件執行相同操作的能力。
 
-React.memo() 是一個高階組件 (HOC**)，**它接收一個組件 A 作爲參數並返回一個組件 B，如果組件 B 的 props（或其中的值）沒有改變，則組件 B 會阻止組件 A 重新渲染 。
+React.memo() 是一個高階組件 (HOC)，它接收一個組件 A 作爲參數並返回一個組件 B，如果組件 B 的 props（或其中的值）沒有改變，則組件 B 會阻止組件 A 重新渲染 。
 
 
 
-React.memo() 是一個 HOC，而**useMemo()**是一個 React Hook。使用 useMemo()，我們可以返回記憶值來避免函數的依賴項沒有改變的情況下重新渲染。
+React.memo() 是一個 HOC，而`useMemo()`是一個 React Hook。使用 `useMemo()`，我們可以返回記憶值來避免函數的依賴項沒有改變的情況下重新渲染。
 
 
 影響 React 重新渲染的兩大關鍵 props / state ，當virtual-DOM發現props或state改變時，就會渲染使用這些數據對應的畫面UI。因此在優化效能的路上，就是需要減少一些不必要但卻很昂貴的渲染。
