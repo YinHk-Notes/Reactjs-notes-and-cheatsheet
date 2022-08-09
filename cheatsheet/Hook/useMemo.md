@@ -62,7 +62,7 @@ root.render(<App />);
 ```
 poor performing function. The expensiveCalculation function runs on every render
 
-After using useMemo
+After using `useMemo`
 ```jsx
 import { useState, useMemo } from "react";
 import ReactDOM from "react-dom/client";
