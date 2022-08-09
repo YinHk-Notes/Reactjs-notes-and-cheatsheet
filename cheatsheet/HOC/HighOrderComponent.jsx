@@ -85,6 +85,7 @@ const Male =  UserGenderHOC('Male')(BaseComp);
 -----------------------------------------------------------------------------------------------
     
 //multi wrapped HOC
+//Take another HOC as argument in HOC. ( wrappedComponent 再wrap另一個component 形成wrapped多層component的HOC )
     
 // 可傳入性別參數的 HOC
 const UserGenderHOC = (gender) => (WrappedComponent) => {
