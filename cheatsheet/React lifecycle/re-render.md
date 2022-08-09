@@ -5,7 +5,7 @@
 ### 1. Re-render component when state changes
 Any time a React component state has changed, React has to re-render the component.
 ```jsx
-lass App extends React.Component {
+class App extends React.Component {
   state = {
     mssg: ""
   };
