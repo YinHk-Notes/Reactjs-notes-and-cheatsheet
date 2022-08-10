@@ -42,7 +42,7 @@ function Count() {
 - Returns the current state.
 - Has an updater function that updates the state.
 
-**For useRef:**
+**For `useRef`:**
 
 - Returns an object with a property containing the initial value.
 - Doesn’t cause a component to re-render when the value or state changes.
