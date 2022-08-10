@@ -11,7 +11,6 @@ const listItems = numbers.map((number) =>
 - use array.map() to display data in render item
 - use **key** in each render item
 
-
 ```jsx
 function NumberList(props) {
   const numbers = props.numbers;
