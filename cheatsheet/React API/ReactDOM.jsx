@@ -14,6 +14,9 @@ const element = <h1>Hello, world</h1>;
 
 root.render(element);
 
+--------------------------------------------------------------------------
+
+/* old method */
 
 /* render */
 import React from 'react';
