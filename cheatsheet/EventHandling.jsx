@@ -4,6 +4,9 @@
 <button onClick={  handleClick /* or () => handleClick() */ }> 
   Action
 </button>
+<button onClick={  this.handleClick /* or () => this.handleClick() */ }> 
+  Action2
+</button>
 
 
 // Use preventDefault instead of return false
