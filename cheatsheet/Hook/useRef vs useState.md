@@ -38,13 +38,13 @@ function Count() {
 
 - Allows functional components to have their own state.
 - Allows us to update the state inside components.
-- It causes components to re-render after state updates.
+- It **causes components to re-render** after state updates.
 - Returns the current state.
-- Has an updater function that updates the state.
+- Has an **updater function** that updates the state.
 
 **For `useRef`:**
 
 - Returns an object with a property containing the initial value.
-- Doesn’t cause a component to re-render when the value or state changes.
-- Data is persisted between renders.
-- Allows referencing DOM elements.
+- **Doesn’t cause a component to re-render** when the value or state changes.
+- **Data is persisted between renders**(value do not change for every render, until you modify manually).
+- Allows **referencing DOM elements**.
