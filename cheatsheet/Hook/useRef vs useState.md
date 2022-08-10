@@ -25,3 +25,11 @@ function Count() {
     countRef.current =  countRef.current + 1;   // This can access and modify the value of ref
   });
 ```
+
+
+### useRef vs useState
+- Data or values stored in a reference or `ref` remains the same, even after component re-rendering, unlike states. So, **References do not affect component rendering but states do**.
+
+- `useState` returns 2 properties or an array. One is the value or state and the other is the function to update the state. In contrast, `useRef` returns only one value which is the actual data stored.
+
+- When the reference value is changed, it is **updated without the need to refresh or re-render**. However in `useState`, the **component must render again to update the state or its value**.
