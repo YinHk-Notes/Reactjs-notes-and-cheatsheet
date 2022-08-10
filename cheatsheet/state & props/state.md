@@ -22,7 +22,12 @@ this.state = {};
 setStateObj({});
 
 // with reference to prev state and props
-setStateObj({...stetObj, counter: stateObj.counter + props.step });
+setStateObj({...stateObj, counter: stateObj.counter + props.step });
+
+//update partial item in the state object
+setStateObj(prevState => { return {...prevState, item1: val1, item2: val2} });
+//or 
+setStateObj({...stateObj, item1: val1, item2: val2 });
 ```
 **class**
 
