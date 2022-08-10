@@ -33,3 +33,18 @@ function Count() {
 - `useState` returns 2 properties or an array. One is the value or state and the other is the function to update the state. In contrast, `useRef` returns only one value which is the actual data stored.
 
 - When the reference value is changed, it is **updated without the need to refresh or re-render**. However in `useState`, the **component must render again to update the state or its value**.
+
+**For `useState`:**
+
+- Allows functional components to have their own state.
+- Allows us to update the state inside components.
+- It causes components to re-render after state updates.
+- Returns the current state.
+- Has an updater function that updates the state.
+
+**For useRef:**
+
+- Returns an object with a property containing the initial value.
+- Doesn’t cause a component to re-render when the value or state changes.
+- Data is persisted between renders.
+- Allows referencing DOM elements.
