@@ -14,7 +14,13 @@
 - **use event emitter, or**
 - use **props** to pass a function to child,  and the child use it and fill it with local state/data etc.
 parent use this function with state/data from child to update its local state
-
+  ```jsx
+    updateState = obj => {
+        this.setState({
+            ...obj
+        });
+    }
+  ```
 
 ### Sharing data between **sibling**
 
