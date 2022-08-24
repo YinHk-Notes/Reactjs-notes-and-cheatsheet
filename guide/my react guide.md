@@ -136,6 +136,9 @@ const commonProps = { props1: val1, props2: val2,... };
 //pass local state as props to child components
 let stateToProps = { props1: stateObj.state1, props2: stateObj.state2,... };
 <Child { ...stateToProps }>
+
+//pass props directly to descendant component
+<Child { ...props }>
 ```
 
 **👉🏻  Calling function inside function component:**
@@ -346,8 +349,7 @@ for class component:
 
 
 
-### function component 內部寫法
-
+### function component
 ```jsx
 function Component_Name(props) {
   const { props1, props2, ...resProps } = props;
