@@ -7,5 +7,17 @@ https://github.com/sudheerj/reactjs-interview-questions
   - use Axios
   - setState
 - Search bar for filtering item in the list 
-- Sorting items in the list and show sorted list 
-- 
+- Sorting items in the list and show the sorted list 
+- Login system
+- Change slides / slide show 
+- Slide bar
+- Modal
+- Accordion
+- Dropdown
+- Nivagation tabs
+
+
+### Useful JS function in react
+- `sort()`
+- `map()`
+- `filter()`
